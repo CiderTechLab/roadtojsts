@@ -2,5 +2,11 @@
   "devDependencies": {
     "@types/node": "^25.1.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o dist/style.css"
   }
 }
