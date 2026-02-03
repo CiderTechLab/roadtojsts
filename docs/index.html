@@ -48,7 +48,6 @@
             <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>
 &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
             </code></pre>
-          </article>
         </section>
         <section>
           <h2 class="text-3xl m-4">GitHub IOでTailWind cssを使う</h2>
@@ -142,6 +141,105 @@ jobs:
             </ul>
             <p>これで、mainブランチにpushするたびに自動的にTailwindがビルドされ、デプロイされます。</p>
           </article>
+        </section>
+        <section>
+          <h2 class="text-3xl m-4">TypeScriptの型一覧</h2>
+          <article>
+            <div class="overflow-x-auto m-4">
+              <table class="w-full border-collapse border border-cyan-400">
+                <thead class="bg-gradient-to-r from-cyan-400 to-blue-900 text-white">
+                  <tr>
+                    <th class="border border-cyan-400 p-3 text-left">型名</th>
+                    <th class="border border-cyan-400 p-3 text-left">使用例</th>
+                    <th class="border border-cyan-400 p-3 text-left">型の概要</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>string</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let name: string = "Alice";</code></td>
+                    <td class="border border-cyan-400 p-3">文字列型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>number</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let age: number = 25;</code></td>
+                    <td class="border border-cyan-400 p-3">数値型（整数、小数、Infinity、NaN）</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>boolean</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let isActive: boolean = true;</code></td>
+                    <td class="border border-cyan-400 p-3">真偽値型（trueまたはfalse）</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>any</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let value: any = "anything";</code></td>
+                    <td class="border border-cyan-400 p-3">任意の型。型チェックを無効化</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>unknown</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let value: unknown = "anything";</code></td>
+                    <td class="border border-cyan-400 p-3">任意の型だが、使用前に型を絞る必要がある</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>void</code></td>
+                    <td class="border border-cyan-400 p-3"><code>function log(): void { }</code></td>
+                    <td class="border border-cyan-400 p-3">値を返さない関数の戻り値型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>null</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let value: null = null;</code></td>
+                    <td class="border border-cyan-400 p-3">nullを表す型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>undefined</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let value: undefined;</code></td>
+                    <td class="border border-cyan-400 p-3">undefinedを表す型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>never</code></td>
+                    <td class="border border-cyan-400 p-3"><code>function error(): never { throw Error(); }</code></td>
+                    <td class="border border-cyan-400 p-3">値を返さない（エラーまたは無限ループ）</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>object</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let obj: object = { };</code></td>
+                    <td class="border border-cyan-400 p-3">オブジェクト型（プリミティブ以外）</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>Type[]</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let nums: number[] = [1, 2, 3];</code></td>
+                    <td class="border border-cyan-400 p-3">配列型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>Union</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let value: string | number;</code></td>
+                    <td class="border border-cyan-400 p-3">複数の型のいずれか</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>Literal</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let direction: "up" | "down";</code></td>
+                    <td class="border border-cyan-400 p-3">特定の値に限定する型</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>Tuple</code></td>
+                    <td class="border border-cyan-400 p-3"><code>let tuple: [string, number];</code></td>
+                    <td class="border border-cyan-400 p-3">固定長の配列で要素ごとに型を指定</td>
+                  </tr>
+                  <tr class="hover:bg-cyan-100">
+                    <td class="border border-cyan-400 p-3"><code>enum</code></td>
+                    <td class="border border-cyan-400 p-3"><code>enum Color { Red, Green, Blue }</code></td>
+                    <td class="border border-cyan-400 p-3">名前付き定数の集合</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <h3>ではTypeScriptで型宣言は必須なのか？</h3>
+          <ul>
+            <li>型推論により、必ずしも明示的な型宣言は必要ないです！（const variable = "text"; のように）</li>
+            <li>ただし、関数の引数・戻り値、データベースれ</li>
+            </li>
+          </ul>
         </section>
       </main>
 
