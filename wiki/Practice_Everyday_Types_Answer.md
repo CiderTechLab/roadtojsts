@@ -622,7 +622,7 @@ const direction = Direction.Up;
 
 ```typescript
 // getInputValue関数
-function getInputValue(elementId: string | null): number | null {
+function getInputValue(elementId: string): number | null {
   const element = document.getElementById(elementId);
   
   if (element) {
@@ -682,11 +682,7 @@ printUserInfo(user2);
 
 ```typescript
 // より詳細な型ガードを使用
-function getInputValue(elementId: string | null): number | null {
-  if (!elementId) {
-    return null;
-  }
-  
+function getInputValue(elementId: string): number | null {
   const element = document.getElementById(elementId);
   
   if (!element) {
@@ -845,6 +841,7 @@ function createUser(
   role: UserRole,
   profile?: UserProfile
 ): User {
+  // 注: 実際の開発では、データベースが自動生成するIDやUUIDを使用してください
   const id = Math.floor(Math.random() * 10000);
   return { id, username, email, role, profile };
 }

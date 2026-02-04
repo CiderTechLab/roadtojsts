@@ -71,7 +71,7 @@ isActive = "yes";      // エラー
 // - hobbies: string[]
 
 function createUser(name, age, email, hobbies) {
-  // TODO: 適切な型アノテーションを追加
+  // TODO: 引数と戻り値の型アノテーションを追加
   return {
     name,
     age,
@@ -363,6 +363,7 @@ printUserInfo(user2);
 
 // TODO: この関数の型を定義
 function createUser(username, email, role, profile) {
+  // 注: 実際の開発では、データベースが自動生成するIDやUUIDを使用してください
   const id = Math.floor(Math.random() * 10000);
   return { id, username, email, role, profile };
 }
