@@ -237,6 +237,6 @@ function log(level: /* Enum型 */, message: string): void {
 
 ## 次のステップ
 
-これらの問題を解き終えたら、[正答と解説ページ](./Practice_Everyday_Types_Answer.md)で答え合わせをしましょう。
+これらの問題を解き終えたら、[正答と解説ページ](./Answer_Practice_Everyday_Types.md)で答え合わせをしましょう。
 
 理解が不十分な箇所があれば、[Learning_Plan](./Learning_Plan)に戻って復習することをお勧めします。

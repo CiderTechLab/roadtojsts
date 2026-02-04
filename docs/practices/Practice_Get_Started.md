@@ -135,6 +135,6 @@ function calculateAge(birthYear: number): number | string {
 
 ## 次のステップ
 
-これらの問題を解き終えたら、[正答と解説ページ](./Practice_Get_Started_Answer.md)で答え合わせをしましょう。
+これらの問題を解き終えたら、[正答と解説ページ](./Answer_Practice_Get_Started.md)で答え合わせをしましょう。
 
 理解が不十分な箇所があれば、[Learning_Plan](./Learning_Plan)に戻って復習することをお勧めします。

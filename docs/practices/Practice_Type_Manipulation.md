@@ -115,4 +115,4 @@ type MyOmit<T, K extends keyof T> = {
 
 ---
 
-[正答と解説ページ](./Practice_Type_Manipulation_Answer.md)
+[正答と解説ページ](./Answer_Practice_Type_Manipulation.md)

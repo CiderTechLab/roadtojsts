@@ -238,6 +238,6 @@ JavaScriptでは実行時エラーにならないが、TypeScriptがコンパイ
 
 ## 次のステップ
 
-これらの問題を解き終えたら、[正答と解説ページ](./Practice_The_Basics_Answer.md)で答え合わせをしましょう。
+これらの問題を解き終えたら、[正答と解説ページ](./Answer_Practice_The_Basics.md)で答え合わせをしましょう。
 
 理解が不十分な箇所があれば、[Learning_Plan](./Learning_Plan)に戻って復習することをお勧めします。

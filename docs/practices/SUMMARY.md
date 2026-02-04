@@ -122,23 +122,23 @@ docs/practices/
 ├── README.md                              # メインガイド
 ├── SUMMARY.md                             # このファイル
 ├── Practice_Get_Started.md
-├── Practice_Get_Started_Answer.md
+├── Answer_Practice_Get_Started.md
 ├── Practice_The_Basics.md
-├── Practice_The_Basics_Answer.md
+├── Answer_Practice_The_Basics.md
 ├── Practice_Everyday_Types.md
-├── Practice_Everyday_Types_Answer.md
+├── Answer_Practice_Everyday_Types.md
 ├── Practice_Narrowing.md
-├── Practice_Narrowing_Answer.md
+├── Answer_Practice_Narrowing.md
 ├── Practice_More_on_Functions.md
-├── Practice_More_on_Functions_Answer.md
+├── Answer_Practice_More_on_Functions.md
 ├── Practice_Object_Types.md
-├── Practice_Object_Types_Answer.md
+├── Answer_Practice_Object_Types.md
 ├── Practice_Classes.md
-├── Practice_Classes_Answer.md
+├── Answer_Practice_Classes.md
 ├── Practice_Modules.md
-├── Practice_Modules_Answer.md
+├── Answer_Practice_Modules.md
 ├── Practice_Type_Manipulation.md
-└── Practice_Type_Manipulation_Answer.md
+└── Answer_Practice_Type_Manipulation.md
 ```
 
 ## 🌟 問題の品質

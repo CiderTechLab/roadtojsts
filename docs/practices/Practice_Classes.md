@@ -215,4 +215,4 @@ class Mage extends Character {
 
 ---
 
-[正答と解説ページ](./Practice_Classes_Answer.md)
+[正答と解説ページ](./Answer_Practice_Classes.md)

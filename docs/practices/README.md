@@ -8,30 +8,30 @@
 
 | Day | トピック | 問題 | 解答 |
 |-----|---------|------|------|
-| 1-2 | Get Started | [問題](./Practice_Get_Started.md) | [解答](./Practice_Get_Started_Answer.md) |
-| 3-4 | The Basics | [問題](./Practice_The_Basics.md) | [解答](./Practice_The_Basics_Answer.md) |
-| 5-7 | Everyday Types | [問題](./Practice_Everyday_Types.md) | [解答](./Practice_Everyday_Types_Answer.md) |
+| 1-2 | Get Started | [問題](./Practice_Get_Started.md) | [解答](./Answer_Practice_Get_Started.md) |
+| 3-4 | The Basics | [問題](./Practice_The_Basics.md) | [解答](./Answer_Practice_The_Basics.md) |
+| 5-7 | Everyday Types | [問題](./Practice_Everyday_Types.md) | [解答](./Answer_Practice_Everyday_Types.md) |
 
 ### Week 2: 型の詳細と高度な機能
 
 | Day | トピック | 問題 | 解答 |
 |-----|---------|------|------|
-| 8-10 | Narrowing | [問題](./Practice_Narrowing.md) | [解答](./Practice_Narrowing_Answer.md) |
-| 11-14 | More on Functions | [問題](./Practice_More_on_Functions.md) | [解答](./Practice_More_on_Functions_Answer.md) |
+| 8-10 | Narrowing | [問題](./Practice_Narrowing.md) | [解答](./Answer_Practice_Narrowing.md) |
+| 11-14 | More on Functions | [問題](./Practice_More_on_Functions.md) | [解答](./Answer_Practice_More_on_Functions.md) |
 
 ### Week 3: オブジェクト指向とクラス
 
 | Day | トピック | 問題 | 解答 |
 |-----|---------|------|------|
-| 15-17 | Object Types | [問題](./Practice_Object_Types.md) | [解答](./Practice_Object_Types_Answer.md) |
-| 18-21 | Classes | [問題](./Practice_Classes.md) | [解答](./Practice_Classes_Answer.md) |
+| 15-17 | Object Types | [問題](./Practice_Object_Types.md) | [解答](./Answer_Practice_Object_Types.md) |
+| 18-21 | Classes | [問題](./Practice_Classes.md) | [解答](./Answer_Practice_Classes.md) |
 
 ### Week 4: 応用と実践
 
 | Day | トピック | 問題 | 解答 |
 |-----|---------|------|------|
-| 22-24 | Modules | [問題](./Practice_Modules.md) | [解答](./Practice_Modules_Answer.md) |
-| 25-26 | Type Manipulation | [問題](./Practice_Type_Manipulation.md) | [解答](./Practice_Type_Manipulation_Answer.md) |
+| 22-24 | Modules | [問題](./Practice_Modules.md) | [解答](./Answer_Practice_Modules.md) |
+| 25-26 | Type Manipulation | [問題](./Practice_Type_Manipulation.md) | [解答](./Answer_Practice_Type_Manipulation.md) |
 
 ## 🎯 使い方
 
