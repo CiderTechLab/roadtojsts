@@ -14,13 +14,13 @@ This repository is my TypeScript practice log.
 
 ### Learning Guide
 
-- **[Learning_Plan.ts](src/Learning_Plan.md)** - 4週間の詳細な学習計画
+- **[Learning_Plan](https://github.com/CiderTechLab/RoadToTypeScript/wiki/Learning_Plan)** - 4週間の詳細な学習計画
   - 週ごとの学習内容とトピック
   - 各章に対応するファイル名
   - 学習チェックリスト
   - 5週目以降の発展的な学習計画
 
-- **[Learning_Method_Guide.ts](src/Learning_Method_Guide.md)** - 効果的な学習方法ガイド
+- **[Learning_Method_Guide](https://github.com/CiderTechLab/RoadToTypeScript/wiki/Learning_Method_Guide)** - 効果的な学習方法ガイド
   - 毎日の学習ルーティン
   - .tsファイルの作成テンプレート
   - コメントの書き方のベストプラクティス
