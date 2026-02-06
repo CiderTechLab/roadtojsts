@@ -4,6 +4,5 @@
     "moduleResolution": "node",
     "outDir": "dist"
   },
-  "include": ["src/*"],
-  "exclude": ["src/miss.ts"]
+  "include": ["src/*", "docs/tableOfContents.ts"]
 }
