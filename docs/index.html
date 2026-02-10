@@ -74,155 +74,146 @@
         </article>
 
         <article class="learning-plan border-t border-gray-300 mt-1">
-        <h2 class="text-3xl m-4">TypeScript 学習計画（4週間）</h2>
+          <h2 class="text-3xl m-4">TypeScript 学習計画（4週間）</h2>
 
-        <section>
-          <h3 class="text-2xl m-4">計画の概要</h3>
-          <p class="ml-4">
-            就職活動に向けて、TypeScriptを「書ける」だけでなく
-            「なぜそう書くのかを説明できる」状態を目指す学習計画。
-          </p>
-        </section>
-
-        <section>
-          <h4 class="text-xl m-4">全体方針</h4>
-          <ul class="list-disc ml-8">
-            <li>TypeScriptを説明可能なスキルとして身につける</li>
-            <li>JavaScriptとの差を型安全性の観点で理解する</li>
-            <li>実行可能なコードと学習記録を成果物として残す</li>
-          </ul>
-        </section>
-
-        <section>
-          <h4 class="text-xl m-4">学習リソース</h4>
-          <p class="ml-4">
-            一次情報として
-            <a
-              href="https://www.typescriptlang.org/docs/handbook/intro.html"
-              class="text-cyan-400 underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TypeScript Handbook
-            </a>
-            を使用する。
-          </p>
-          <p class="text-sm text-gray-400 ml-4">
-            ※ 翻訳を利用しつつ、章構成は原文ベースで把握する
-          </p>
-        </section>
-
-        <section>
-          <h4 class="text-xl m-4">4週間カリキュラム</h4>
-
-          <!-- Week 1 -->
-          <section class="ml-4">
-            <h5 class="text-lg m-2">Week 1：TypeScriptの存在理由を体感する</h5>
-            <p class="ml-4">
-              JavaScriptで起きがちな問題を、TypeScriptがどこで防ぐのかを理解する。
+          <section class="bg-yellow-50 border-l-4 border-yellow-400 p-4 ml-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">📚 参考リソース</h3>
+            <p class="mb-2">
+              本学習計画は
+              <a
+                href="https://typescriptbook.jp/"
+                class="text-cyan-400 underline font-semibold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                サバイバルTypeScript
+              </a>
+              を教材として参照しています。サバイバルTypeScriptの教材内容に基づいて構成された学習スケジュールです。
             </p>
+            <p class="text-sm text-gray-600">
+              教材：<a href="https://typescriptbook.jp/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">サバイバルTypeScript</a>（CC BY-SA 4.0）/ 著作者：YYTypeScript
+            </p>
+          </section>
 
+          <section>
+            <h3 class="text-2xl m-4">学習時間の構成</h3>
+            <p class="ml-4">本計画は<strong>平日5日間、1日2時間</strong>の学習時間を前提としています。</p>
+            <p class="ml-4 text-sm text-gray-600 mt-2">※ 週末は休息日として、学んだ内容の定着や自主的な復習に充てることができます。</p>
+            <div class="ml-4 mt-3">
+              <div class="mb-3">
+                <h4 class="font-semibold">理論学習（30〜45分）</h4>
+                <p class="text-gray-700">リファレンスから記事を読み、TypeScriptの概念を理解する。</p>
+              </div>
+              <div class="mb-3">
+                <h4 class="font-semibold">実践コーディング（60〜75分）</h4>
+                <p class="text-gray-700">実際に<code class="bg-gray-200 px-2 py-1 rounded">.ts</code>ファイルを作成し、コードを手で書く。</p>
+              </div>
+              <div class="mb-3">
+                <h4 class="font-semibold">復習・確認（15〜30分）</h4>
+                <p class="text-gray-700">エラーを修正し、動作を確認して、その日に学んだ内容を振り返る。</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-2xl m-4">学習方針</h3>
+            <ul class="list-disc ml-8 space-y-2">
+              <li>毎日コードを手で書く（<code class="bg-gray-200 px-2 py-1 rounded">src/</code>ディレクトリに.tsファイルを作成）</li>
+              <li>各トピックについて実際に動作するコード例を作成</li>
+              <li>JavaScriptとの違いを意識しながら学習</li>
+              <li>実務で使う知識を優先的に習得</li>
+              <li><strong>完璧を目指さず、継続を重視</strong></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-2xl m-4">4週間カリキュラム</h3>
+
+            <!-- Week 1 -->
+            <section class="ml-4 mt-4">
+              <h5 class="text-lg font-semibold m-2">📌 Week 1：型の基礎と基本概念</h5>
+              <p class="ml-4 text-gray-700"><strong>テーマ：</strong>TypeScriptとは何か、型システムの基本を理解する</p>
+
+              <ol class="list-decimal ml-8 mt-2 space-y-1">
+                <li>Day 1：TypeScriptの概要と型推論</li>
+                <li>Day 2：プリミティブ型の完全理解</li>
+                <li>Day 3：型エイリアスと構造的部分型</li>
+                <li>Day 4：配列の型定義</li>
+                <li>Day 5：タプルと週の総復習</li>
+              </ol>
+            </section>
+
+            <!-- Week 2 -->
+            <section class="ml-4 mt-4">
+              <h5 class="text-lg font-semibold m-2">📌 Week 2：オブジェクト型と高度な型</h5>
+              <p class="ml-4 text-gray-700"><strong>テーマ：</strong>複合型を使ったデータ構造の表現</p>
+
+              <ol class="list-decimal ml-8 mt-2 space-y-1">
+                <li>Day 1：オブジェクト型の基礎と応用</li>
+                <li>Day 2：インデックス型とMap/Set</li>
+                <li>Day 3：列挙型とユニオン型</li>
+                <li>Day 4：型の絞り込みとインターセクション型</li>
+                <li>Day 5：分割代入と週の総復習</li>
+              </ol>
+            </section>
+
+            <!-- Week 3 -->
+            <section class="ml-4 mt-4">
+              <h5 class="text-lg font-semibold m-2">📌 Week 3：関数、クラス、例外処理</h5>
+              <p class="ml-4 text-gray-700"><strong>テーマ：</strong>オブジェクト指向とクラスベースの開発</p>
+
+              <ol class="list-decimal ml-8 mt-2 space-y-1">
+                <li>Day 1：関数の型定義</li>
+                <li>Day 2：型ガード関数</li>
+                <li>Day 3：クラスの基礎</li>
+                <li>Day 4：アクセス修飾子とカプセル化</li>
+                <li>Day 5：例外処理と週の総復習</li>
+              </ol>
+            </section>
+
+            <!-- Week 4 -->
+            <section class="ml-4 mt-4">
+              <h5 class="text-lg font-semibold m-2">📌 Week 4：高度なトピックと実践</h5>
+              <p class="ml-4 text-gray-700"><strong>テーマ：</strong>非同期処理、ジェネリクス、型レベルプログラミング</p>
+
+              <ol class="list-decimal ml-8 mt-2 space-y-1">
+                <li>Day 1：非同期処理の基礎</li>
+                <li>Day 2：インターフェース</li>
+                <li>Day 3：ジェネリクスの基本と応用</li>
+                <li>Day 4：モジュールシステム</li>
+                <li>Day 5：型レベルプログラミングと総復習</li>
+              </ol>
+            </section>
+
+            <p class="mt-6 ml-4 text-sm text-gray-400">※ 本学習計画は平日5日間（週末休息）、1日2時間の学習を前提としています。</p>
+            <p class="ml-4 text-sm text-gray-400">※ 進捗・理解度に応じて随時更新します。</p>
+        </article>
+
+        <article class="border-t border-gray-300 mt-4">
+          <h2 class="text-3xl m-4">カリキュラム実践</h2>
             <ol class="list-decimal ml-8">
               <li>Day 1：環境構築・基本概念</li>
+                <ul>
+                  <li>JavaScriptの歴史</li>
+                  <ul>
+                    <li>開発者は<a href="https://ja.wikipedia.org/wiki/ブレンダン・アイク">ブレンダン・アイク</a></li>
+                    <li>ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！</li>
+                    <li>JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！</li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li>TypeScriptの歴史</li>
+                  <ul>
+                    
+                  </ul>
+                </ul>
+                </ul>
               <li>Day 2：基本型・Union</li>
               <li>Day 3：any / unknown・関数の型</li>
               <li>Day 4：Type Assertions</li>
               <li>Day 5：振り返り・Pages執筆</li>
             </ol>
-
-            <div class="ml-8 mt-2">
-              <p class="font-semibold">参照 Handbook</p>
-              <ul class="list-disc ml-6 text-sm">
-                <li>Intro</li>
-                <li>The Basics</li>
-                <li>Everyday Types</li>
-                <li>Type Assertions</li>
-              </ul>
-            </div>
-          </section>
-
-          <!-- Week 2 -->
-          <section class="ml-4 mt-4">
-            <h5 class="text-lg m-2">Week 2：オブジェクトと型設計の基礎</h5>
-            <p class="ml-4">
-              データ構造をどのように定義すると壊れにくいかを学ぶ。
-            </p>
-
-            <ol class="list-decimal ml-8">
-              <li>Day 6：Object Types</li>
-              <li>Day 7：Interfaces</li>
-              <li>Day 8：Type Aliases</li>
-              <li>Day 9：Structural Typing</li>
-              <li>Day 10：振り返り・設計判断の言語化</li>
-            </ol>
-
-            <div class="ml-8 mt-2">
-              <p class="font-semibold">参照 Handbook</p>
-              <ul class="list-disc ml-6 text-sm">
-                <li>Object Types</li>
-                  <li>Interfaces</li>
-                  <li>Type Aliases</li>
-                  <li>Structural Typing</li>
-                </ul>
-              </div>
-            </section>
-
-            <!-- Week 3 -->
-            <section class="ml-4 mt-4">
-              <h5 class="text-lg m-2">Week 3：Unionと安全な分岐</h5>
-              <p class="ml-4">
-                条件分岐を人間の注意力に任せず、型で制御する。
-              </p>
-
-              <ol class="list-decimal ml-8">
-                <li>Day 11：Union Types</li>
-                <li>Day 12：Narrowing</li>
-                <li>Day 13：Discriminated Unions</li>
-                <li>Day 14：never</li>
-                <li>Day 15：まとめ</li>
-              </ol>
-
-              <div class="ml-8 mt-2">
-                <p class="font-semibold">参照 Handbook</p>
-                <ul class="list-disc ml-6 text-sm">
-                  <li>Union Types</li>
-                  <li>Narrowing</li>
-                  <li>Discriminated Unions</li>
-                  <li>never</li>
-                </ul>
-              </div>
-            </section>
-
-            <!-- Week 4 -->
-            <section class="ml-4 mt-4">
-              <h5 class="text-lg m-2">Week 4：Genericsと実務への接続</h5>
-              <p class="ml-4">
-                同じ処理を安全に使い回すための型設計を学ぶ。
-              </p>
-
-                <ol class="list-decimal ml-8">
-                  <li>Day 16：Generics（基本）</li>
-                  <li>Day 17：Generics（制約）</li>
-                  <li>Day 18：Utility Types</li>
-                  <li>Day 19：APIレスポンス想定</li>
-                  <li>Day 20：総振り返り</li>
-                </ol>
-
-                <div class="ml-8 mt-2">
-                  <p class="font-semibold">参照 Handbook</p>
-                  <ul class="list-disc ml-6 text-sm">
-                    <li>Generics</li>
-                    <li>Utility Types</li>
-                  </ul>
-                </div>
-              </section>
-            </section>
-
-            <footer class="mt-6 text-sm text-gray-400">
-              <p>※ 本学習計画は進捗・理解度に応じて随時更新する</p>
-            </footer>
         </article>
-
 
         <article class="border-t border-gray-300 mt-4">
           <h2 class="text-3xl m-4">TypeScript 学習メモ</h2>

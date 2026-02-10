@@ -10,25 +10,18 @@ This repository is my TypeScript practice log.
 
 ## Learning Resources
 
-このリポジトリには、TypeScript Handbookを使った体系的な学習計画が含まれています。
+このリポジトリには、**サバイバルTypeScript** (https://typescriptbook.jp/) を使った体系的な学習計画が含まれています。
 
 ### Learning Guide
 
-- **[Learning_Plan](https://github.com/CiderTechLab/RoadToTypeScript/wiki/Learning_Plan)** - 4週間の詳細な学習計画
-  - 週ごとの学習内容とトピック
-  - 各章に対応するファイル名
-  - 学習チェックリスト
+- **[LEARNING_PLAN.md](./LEARNING_PLAN.md)** - 4週間の詳細な学習計画
+  - 第1週：型の基礎と基本概念
+  - 第2週：オブジェクト型と高度な型
+  - 第3週：関数、クラス、例外処理
+  - 第4週：非同期処理、ジェネリクス、型レベルプログラミング
+  - 各週のテーマ、学習リファレンス、実装ファイル
+  - 実装課題とチェックリスト
   - 5週目以降の発展的な学習計画
-
-- **[Learning_Method_Guide](https://github.com/CiderTechLab/RoadToTypeScript/wiki/Learning_Method_Guide)** - 効果的な学習方法ガイド
-  - 毎日の学習ルーティン
-  - .tsファイルの作成テンプレート
-  - コメントの書き方のベストプラクティス
-  - 実践プロジェクトのアイデア集
-  - よくあるつまずきポイントと対策
-  - FAQ
-
-これらのファイルを参照して、TypeScriptの学習を進めています。
 
 ## Folder Structure
 
@@ -42,10 +35,18 @@ This repository is my TypeScript practice log.
 
 ## References
 
-- [TypeScript: The starting point for learning TypeScript](https://www.typescriptlang.org/docs/handbook/)
+- [サバイバルTypeScript](https://typescriptbook.jp/) - 本学習計画の主教材（YYTypeScript著、CC BY-SA 4.0）
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [GitHub - yytypescript/book](https://github.com/yytypescript/book)
 
 ## License
 
 このプロジェクトはMITライセンスの下でライセンスされています。詳細はLICENSEファイルをご覧ください。
 
-This project is licensed under the MIT License, see the LICENSE file for details
+**教材について：**  
+本学習計画で使用している教材「[サバイバルTypeScript](https://typescriptbook.jp/)」は、YYTypeScript著、[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)でライセンスされています。
+
+This project is licensed under the MIT License, see the LICENSE file for details.
+
+**About the learning materials:**  
+The learning material "[サバイバルTypeScript](https://typescriptbook.jp/)" used in this learning plan is authored by YYTypeScript and licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

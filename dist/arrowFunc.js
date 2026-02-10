@@ -8,3 +8,4 @@ const arrow = (name, age, date) => {
     console.log(`${name} is ${age} years old. Today is ${date} so Happy UnBirthday!`);
 };
 arrow("Alice", 30, new Date());
+export {};

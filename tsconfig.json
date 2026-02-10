@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "target": "es2015",
+    "module": "es2015",
+    "moduleDetection": "force",
     "moduleResolution": "node",
     "outDir": "dist"
   },
-  "include": ["src/*", "docs/tableOfContents.ts"]
+  "include": ["src/*"]
 }
