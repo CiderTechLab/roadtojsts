@@ -1,13 +1,14 @@
 {
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.1.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "tailwindcss": "^4.1.18"
-  },
   "scripts": {
-    "build-css": "tailwindcss build src/style.css -o dist/style.css"
+    "build": "postcss src/style.css -o docs/style.css"
   },
   "name": "roadtotypescript",
   "version": "1.0.0",
@@ -27,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/CiderTechLab/RoadToTypeScript/issues"
   },
-  "homepage": "https://github.com/CiderTechLab/RoadToTypeScript#readme"
+  "homepage": "https://github.com/CiderTechLab/RoadToTypeScript#readme",
+  "dependencies": {}
 }

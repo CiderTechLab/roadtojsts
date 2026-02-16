@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>RoadToTypeScript</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="tableOfContents.js" defer></script>
   </head>
   <body>
     <div class="layout">
-      <header class="fixed w-full p-4 flex items-center gap-8 text-white bg-gradient-to-r from-cyan-400 to-blue-900" style="height: var(--height-header);">
-        <h1 class="text-4xl font-bold">RoadToTypeScript</h1>
+      <header>
+        <h1>RoadToTypeScript</h1>
       </header>
 
       <div class="layout__inner">
@@ -26,10 +25,11 @@
         </article>
 
         <article class="border-t border-gray-300 mt-4">
-          <h2 class="text-3xl m-4">制作の流れ</h2>
+          <details>
+            <summary><h2 class="text-3xl m-4">当サイト制作の流れ</h2></summary>
           
           <section class="ml-4">
-            <h3 class="text-2xl m-4">このサイトの構築プロセス</h3>
+            <h3>このサイトの構築プロセス</h3>
             <p class="ml-4 mb-4">
               RoadToTypeScriptは、<strong>生成AIの支援を受けながら段階的に</strong>構築されました。以下は制作の基本的なフローです。
             </p>
@@ -66,18 +66,20 @@
           </section>
 
           <section class="ml-4 mt-6">
-            <h3 class="text-lg font-semibold m-4">まとめ</h3>
+            <h3>まとめ</h3>
             <p class="ml-4">
               この段階的で反復的なアプローチにより、機能追加とデザイン調整を効率的に進めることができます。
             </p>
           </section>
+          </details>
         </article>
 
         <article class="learning-plan border-t border-gray-300 mt-1">
-          <h2 class="text-3xl m-4">TypeScript 学習計画（4週間）</h2>
+          <details>
+            <summary><h2 class="text-3xl m-4">TypeScript 学習計画（4週間）</h2></summary>
 
           <section class="bg-yellow-50 border-l-4 border-yellow-400 p-4 ml-4 mb-4">
-            <h3 class="text-xl font-semibold mb-2">📚 参考リソース</h3>
+            <h3>📚 参考リソース</h3>
             <p class="mb-2">
               本学習計画は
               <a
@@ -96,7 +98,7 @@
           </section>
 
           <section>
-            <h3 class="text-2xl m-4">学習時間の構成</h3>
+            <h3>学習時間の構成</h3>
             <p class="ml-4">本計画は<strong>平日5日間、1日2時間</strong>の学習時間を前提としています。</p>
             <p class="ml-4 text-sm text-gray-600 mt-2">※ 週末は休息日として、学んだ内容の定着や自主的な復習に充てることができます。</p>
             <div class="ml-4 mt-3">
@@ -116,7 +118,7 @@
           </section>
 
           <section>
-            <h3 class="text-2xl m-4">学習方針</h3>
+            <h3>学習方針</h3>
             <ul class="list-disc ml-8 space-y-2">
               <li>毎日コードを手で書く（<code class="bg-gray-200 px-2 py-1 rounded">src/</code>ディレクトリに.tsファイルを作成）</li>
               <li>各トピックについて実際に動作するコード例を作成</li>
@@ -127,7 +129,7 @@
           </section>
 
           <section>
-            <h3 class="text-2xl m-4">4週間カリキュラム</h3>
+            <h3>4週間カリキュラム</h3>
 
             <!-- Week 1 -->
             <section class="ml-4 mt-4">
@@ -187,10 +189,12 @@
 
             <p class="mt-6 ml-4 text-sm text-gray-400">※ 本学習計画は平日5日間（週末休息）、1日2時間の学習を前提としています。</p>
             <p class="ml-4 text-sm text-gray-400">※ 進捗・理解度に応じて随時更新します。</p>
+          </details>
         </article>
 
         <article class="border-t border-gray-300 mt-4">
-          <h2 class="text-3xl m-4">カリキュラム実践</h2>
+          <details>
+            <summary><h2 class="text-3xl m-4">カリキュラム実践</h2></summary>
             <ol class="list-decimal ml-8">
               <li>Day 1：環境構築・基本概念</li>
                 <ul>
@@ -213,14 +217,16 @@
               <li>Day 4：Type Assertions</li>
               <li>Day 5：振り返り・Pages執筆</li>
             </ol>
+          </details>
         </article>
 
         <article class="border-t border-gray-300 mt-4">
-          <h2 class="text-3xl m-4">TypeScript 学習メモ</h2>
+          <details>
+            <summary><h2 class="text-3xl m-4">TypeScript 学習メモ</h2></summary>
           <section>
-            <h3 class="text-2xl m-4">tsconfig.json</h3>
+            <h3>tsconfig.json</h3>
             <p class="ml-4">TypeScriptのコンパイル設定を記述するファイルです。</p>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>
+            <pre><code>
 {
   "compilerOptions": {
     "target": "es2015"
@@ -237,7 +243,7 @@
             </p>
           </section>
           <section>
-          <h3 class="text-2xl m-4">TypeScriptの型一覧</h3>
+          <h3>TypeScriptの型一覧</h3>
             <div class="overflow-x-auto m-4">
               <table class="w-full border-collapse border border-cyan-400">
                 <thead class="bg-gradient-to-r from-cyan-400 to-blue-900 text-white">
@@ -333,113 +339,28 @@
               </li>
             </ul>
           </section>
+          </details>
         </article>
         <article class="border-t border-gray-300 mt-4">
-          <h2 class="text-3xl m-4">TailWind css</h2>
-          <section>
-            <p class="ml-4">このページではTailWind cssを試験的に導入しております。</p>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>
-&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
-            </code></pre>
-          </section>
-          <section>
-            <h3 class="text-3xl m-4">GitHub IOでTailWind cssを使う</h3>
+          <details>
+            <summary><h2 class="text-3xl m-4">TailWind css</h2></summary>
             <section>
-              <h4 class="text-2xl m-4">1. ローカル環境でセットアップ</h4>
-              <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>npm init -y
-  npm install -D tailwindcss postcss autoprefixer
-  npx tailwindcss init -p
+              <p class="ml-4">このページではTailWind cssを試験的に導入しております。</p>
+              <pre><code>
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
               </code></pre>
-
-            <h4 class="text-2xl m-4">2. tailwind.config.js を修正</h4>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>/**
- * @type {import('tailwindcss').Config}
- */
-export default {
-  content: [
-    "./docs/**/*.{html,js}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+              <p>Tailwind CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。</p>
+              <pre><code>
+npm run build
               </code></pre>
-
-              <h4 class="text-2xl m-4">3. input.css を作成</h4>
-              <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>@tailwind base;
-@tailwind components;
-@tailwind utilities;
-            </code></pre>
-
-            <h4 class="text-2xl m-4">4. package.json にビルドスクリプト追加</h4>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>{
-  "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./docs/output.css"
-  }
-}
-            </code></pre>
-
-            <h4 class="text-2xl m-4">5. GitHub Actions ワークフロー作成</h4>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>name: Build and Deploy
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v2
-        with:
-          path: './docs'
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-            </code></pre>
-
-            <h4 class="text-2xl m-4">6. index.htmlを修正</h4>
-            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>&lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;link rel="stylesheet" href="output.css" /&gt;
-  &lt;link rel="stylesheet" href="style.css" /&gt;
-  &lt;title&gt;RoadToTypeScript&lt;/title&gt;
-&lt;/head&gt;
-            </code></pre>
-            <p class="ml-4">CDNスクリプトを削除して、生成された<code>output.css</code>を読み込みます。</p>
-
-            <h4 class="text-2xl m-4">7. GitHub設定</h4>
-            <p class="ml-4">GitHub リポジトリ &gt; Settings &gt; Pages で以下を選択：</p>
-            <ul>
-              <li>Source: <code>GitHub Actions</code></li>
-            </ul>
-            <p class="ml-4">これで、mainブランチにpushするたびに自動的にTailwindがビルドされ、デプロイされます。</p>
-          </section>
+            </section>
+          </details>
         </article>
       </main>
       </div>
 
-      <footer class="fixed bottom-0 w-full p-4 bg-gradient-to-r from-cyan-400 to-blue-900 text-white flex justify-end items-center" style="height: var(--height-footer);">
-        <p>&copy; 2026 RoadToTypeScript by <a href="https://cidertechlab.github.io/">CiderTechLab</a></p>
+      <footer>
+        <p>&copy; 2026 RoadToTypeScript - Powered by <a href="https://cidertechlab.github.io/">CiderTechLab</a></p>
       </footer>
     </div>
   </body>

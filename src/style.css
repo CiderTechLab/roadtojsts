@@ -1,0 +1,153 @@
+@charset "UTF-8";
+@import "tailwindcss";
+
+/** summary elements */
+summary {
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* カスタム矢印を追加 */
+summary::before {
+  content: "▼";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  color: #0891b2;
+}
+
+details[open] > summary::before {
+  transform: rotate(-90deg);
+}
+
+/** CSSカスタムプロパティ */
+:root {
+  --height-header: 80px;
+  --height-footer: 40px;
+}
+
+/**
+ * h2の自動番号付け
+ * @memo h2counter CSSカウンターのこと。ただし、CSS変数ではない。
+ */
+main {
+  counter-reset: h2-counter;
+}
+
+main h2 {
+  counter-increment: h2-counter;
+}
+
+main h2::before {
+  content: counter(h2-counter) ". ";
+}
+
+@layer components {
+  /** header */
+  header {
+    @apply fixed w-full p-4 flex items-center gap-8 text-white bg-gradient-to-r from-cyan-400 to-blue-900;
+    height: var(--height-header);
+  }
+
+  /** h1 */
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  /** h3 */
+  h3 {
+    @apply text-2xl m-4;
+  }
+
+  /** pre */
+  pre {
+    @apply bg-black text-white p-2 overflow-x-auto rounded-[0.5rem] my-[0.125rem];
+  }
+
+  /** code */
+  code {
+    @apply p-0;
+  }
+
+  /** footer */
+  footer {
+    @apply fixed bottom-0 w-full p-4 bg-gradient-to-r from-cyan-400 to-blue-900 text-white flex justify-end items-center;
+    height: var(--height-footer);
+  }
+
+  /** heroセクション */
+  .hero {
+    height: 50vh;
+    background: linear-gradient(to bottom, #0891b2, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /** 2カラムレイアウト */
+  .layout__inner {
+    @apply flex flex-col gap-0;
+    padding-top: var(--height-header);
+    padding-bottom: var(--height-footer);
+  }
+}
+
+/** デスクトップレイアウト（1024px以上） */
+@media (min-width: 1024px) {
+  @layer components {
+    .layout__inner {
+      @apply grid;
+      grid-template-columns: 250px 1fr;
+      gap: 0;
+    }
+
+    aside {
+      grid-column: 1;
+      order: 1;
+      position: sticky;
+      top: var(--height-header);
+      max-height: calc(100vh - var(--height-header) - var(--height-footer));
+      overflow-y: auto;
+    }
+
+    main {
+      grid-column: 2;
+      order: 2;
+    }
+  }
+}
+
+/* モバイルレイアウト（1024px未満） */
+@media (max-width: 1023px) {
+  @layer components {
+    .layout__inner {
+      @apply flex flex-col;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    aside {
+      order: -1;
+      padding-top: 5rem;
+      margin-top: var(--height-header);
+    }
+
+    main {
+      order: 0;
+    }
+  }
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: deepskyblue;
+}
