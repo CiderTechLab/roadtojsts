@@ -1,250 +1,426 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-
-    <!-- meta info -->
-    <meta charset="UTF-8" />
+	<head>
+		<!-- meta info -->
+		<meta charset="UTF-8" />
 		<meta name="author" content="S.K" />
 		<meta
 			name="description"
 			content="S.KによるJavaScriptおよびTypeScriptの学習記録サイトです。"
 		/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Road&nbsp;To&nbsp;JS&nbsp;&amp;&nbsp;TS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Road&nbsp;To&nbsp;JS&nbsp;&amp;&nbsp;TS</title>
 
-    <!-- style info -->
-    <link rel="stylesheet" href="style.css" />
+		<!-- style info -->
+		<link rel="stylesheet" href="/docs/style.css" />
 
-    <!-- script info -->
-    <script src="tableOfContents.js" defer></script>
-  </head>
-  <body>
-    <div class="layout">
-      <header class="header">
-        <h1>Road&nbsp;To&nbsp;<span class="header__title--js">JS</span>&nbsp;&amp;&nbsp;<span class="header__title--ts">TS</span></h1>
-      </header>
+		<!-- script info -->
+		<script src="/docs/tableOfContents.js" defer></script>
+	</head>
+	<body>
+		<div class="layout">
+			<header class="header">
+				<h1>
+					Road&nbsp;To&nbsp;<span class="header__title--js">JS</span
+					>&nbsp;&amp;&nbsp;<span class="header__title--ts">TS</span>
+				</h1>
+			</header>
 
-      <div class="layout__inner">
-        <aside></aside>
+			<div class="layout__inner">
+				<aside></aside>
 
-        <main class="pb-20 p-4">
-        <article class="hero">
-          <section class="hero-section">
-            <p class="hero-section__slogan">「書ける」から「説明できる」へ。</p>
-            <p class="hero-section__subtext">TypeScript Master Road.</p>
-          </section>
-        </article>
+				<main class="pb-20 p-4">
+					<article class="hero">
+						<section class="hero-section">
+							<p class="hero-section__slogan">
+								「書ける」から「説明できる」へ。
+							</p>
+							<p class="hero-section__subtext">TypeScript Master Road.</p>
+						</section>
+					</article>
 
-        <article class="article">
-          <details>
-            <summary><h2 class="heading-two">当サイト制作の流れ</h2></summary>
-          
-          <section class="ml-4">
-            <h3>このサイトの構築プロセス</h3>
-            <p class="ml-4 mb-4">
-              RoadToTypeScriptは、<strong>生成AIの支援を受けながら段階的に</strong>構築されました。以下は制作の基本的なフローです。
-            </p>
+					<article class="article">
+						<details>
+							<summary><h2 class="heading-two">当サイト制作の流れ</h2></summary>
 
-            <ol class="list-decimal ml-8 space-y-4">
-              <li>
-                <h4 class="text-xl font-semibold mb-2">VSCodeのサイドバーチャットにプロンプトを記入</h4>
-                <p class="ml-4">
-                  実装したい機能や修正内容を、自然言語でチャットに入力します。例えば、「目次を自動生成したい」「レスポンシブレイアウトにしてほしい」といった内容です。
-                </p>
-              </li>
+							<section class="ml-4">
+								<h3>このサイトの構築プロセス</h3>
+								<p class="ml-4 mb-4">
+									RoadToTypeScriptは、<strong>生成AIの支援を受けながら段階的に</strong>構築されました。以下は制作の基本的なフローです。
+								</p>
 
-              <li>
-                <h4 class="text-xl font-semibold mb-2">追加・編集されたコードを確認し、「保持」ボタンをクリック</h4>
-                <p class="ml-4">
-                  AIが生成したコード変更をVSCode上で確認します。意図通りであれば、「保持」ボタンをクリックして変更を確定させます。
-                </p>
-              </li>
+								<ol class="list-decimal ml-8 space-y-4">
+									<li>
+										<h4 class="text-xl font-semibold mb-2">
+											VSCodeのサイドバーチャットにプロンプトを記入
+										</h4>
+										<p class="ml-4">
+											実装したい機能や修正内容を、自然言語でチャットに入力します。例えば、「目次を自動生成したい」「レスポンシブレイアウトにしてほしい」といった内容です。
+										</p>
+									</li>
 
-              <li>
-                <h4 class="text-xl font-semibold mb-2">見た目をブラウザで確認</h4>
-                <p class="ml-4">
-                  変更内容がブラウザでどのように表示されるかを確認します。レイアウト、色、フォント、レスポンシブ対応など、デザイン面での問題がないかチェックします。
-                </p>
-              </li>
+									<li>
+										<h4 class="text-xl font-semibold mb-2">
+											追加・編集されたコードを確認し、「保持」ボタンをクリック
+										</h4>
+										<p class="ml-4">
+											AIが生成したコード変更をVSCode上で確認します。意図通りであれば、「保持」ボタンをクリックして変更を確定させます。
+										</p>
+									</li>
 
-              <li>
-                <h4 class="text-xl font-semibold mb-2">修正点があれば最初に戻る</h4>
-                <p class="ml-4">
-                  問題が見つかった場合は、プロンプトの記入に戻り、修正内容をプロンプトとして入力します。この反復プロセスを繰り返すことで、品質を高めていきます。
-                </p>
-              </li>
-            </ol>
-          </section>
+									<li>
+										<h4 class="text-xl font-semibold mb-2">
+											見た目をブラウザで確認
+										</h4>
+										<p class="ml-4">
+											変更内容がブラウザでどのように表示されるかを確認します。レイアウト、色、フォント、レスポンシブ対応など、デザイン面での問題がないかチェックします。
+										</p>
+									</li>
 
-          <section class="ml-4 mt-6">
-            <h3>まとめ</h3>
-            <p class="ml-4">
-              この段階的で反復的なアプローチにより、機能追加とデザイン調整を効率的に進めることができます。
-            </p>
-          </section>
-          </details>
-        </article>
+									<li>
+										<h4 class="text-xl font-semibold mb-2">
+											修正点があれば最初に戻る
+										</h4>
+										<p class="ml-4">
+											問題が見つかった場合は、プロンプトの記入に戻り、修正内容をプロンプトとして入力します。この反復プロセスを繰り返すことで、品質を高めていきます。
+										</p>
+									</li>
+								</ol>
+							</section>
 
-        <article class="article">
-          <h2 class="heading-two">JavaScript</h2>
-          <details><summary><h3 class="heading-three">歴史</h3></summary>
-            <ul>
-              <li>開発者は<a href="https://ja.wikipedia.org/wiki/ブレンダン・アイク">ブレンダン・アイク</a></li>
-              <li>ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！</li>
-              <li>JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！</li>
-            </ul>
-          </details>
-          <details><summary><h3 class="heading-three">Node.jsでのJavaScript実行</h3></summary>
-          以下のコマンドで実行できる。
-          <pre><code>
+							<section class="ml-4 mt-6">
+								<h3>まとめ</h3>
+								<p class="ml-4">
+									この段階的で反復的なアプローチにより、機能追加とデザイン調整を効率的に進めることができます。
+								</p>
+							</section>
+						</details>
+					</article>
+
+					<article class="article">
+						<h2 class="heading-two">JavaScript</h2>
+						<details>
+							<summary><h3 class="heading-three">歴史</h3></summary>
+							<ul>
+								<li>
+									開発者は<a
+										href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
+										>ブレンダン・アイク</a
+									>
+								</li>
+								<li>
+									ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！
+								</li>
+								<li>
+									JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！
+								</li>
+							</ul>
+						</details>
+						<details>
+							<summary>
+								<h3 class="heading-three">Node.jsでのJavaScript実行</h3>
+							</summary>
+							以下のコマンドで実行できる。
+							<pre><code>
 node [filename].js
           </code></pre>
-          </details>
-        </article>
+						</details>
+						<details>
+							<summary><h3 class="heading-three">変数、定数</h3></summary>
+							<table>
+								<thead>
+									<tr>
+										<th>オペランド</th>
+										<th>宣言</th>
+										<th>再宣言</th>
+										<th>スコープ</th>
+										<th>巻き上げ</th>
+										<th>備考</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>let</td>
+										<td>&#9675;</td>
+										<td>&#215;</td>
+										<td>ブロックスコープ</td>
+										<td>&#215;</td>
+										<td>constの次に使用するべき。</td>
+									</tr>
+									<tr>
+										<td>const</td>
+										<td>&#215;</td>
+										<td>&#215;</td>
+										<td>ブロックスコープ</td>
+										<td>&#215;</td>
+										<td><strong>最優先で使うべき。</strong>初期値が必要。</td>
+									</tr>
+									<tr>
+										<td>var</td>
+										<td>&#9675;</td>
+										<td>&#9675;</td>
+										<td>関数スコープ</td>
+										<td>&#9675;</td>
+										<td><strong>非推奨。</strong></td>
+									</tr>
+								</tbody>
+							</table>
+						</details>
+					</article>
 
-        <article class="article">
-          <details>
-            <summary><h2 class="heading-two">TypeScript 学習メモ</h2></summary>
-          <section>
-            <h3>tsconfig.json</h3>
-            <p class="ml-4">TypeScriptのコンパイル設定を記述するファイルです。</p>
-            <pre><code>
+					<article class="article">
+						<details>
+							<summary>
+								<h2 class="heading-two">TypeScript 学習メモ</h2>
+							</summary>
+							<section>
+								<h3>tsconfig.json</h3>
+								<p class="ml-4">
+									TypeScriptのコンパイル設定を記述するファイルです。
+								</p>
+								<pre><code>
 {
   "compilerOptions": {
     "target": "es2015"
   }
 }
             </code></pre>
-            <p class="ml-4">
-              上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
-              <strong>指定しないとデフォルトでES5になります。</strong>
-            </p>
-            <p class="ml-4">"outDir": "dist",</p>
-            <p class="ml-4">
-              この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
-            </p>
-          </section>
-          <section>
-          <h3>TypeScriptの型一覧</h3>
-            <div class="overflow-x-auto m-4">
-              <table class="w-full border-collapse border border-cyan-400">
-                <thead class="bg-gradient-to-r from-cyan-400 to-blue-900 text-white">
-                  <tr>
-                    <th class="border border-cyan-400 p-3 text-left">型名</th>
-                    <th class="border border-cyan-400 p-3 text-left">使用例</th>
-                    <th class="border border-cyan-400 p-3 text-left">型の概要</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>string</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let name: string = "Alice";</code></td>
-                    <td class="border border-cyan-400 p-3">文字列型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>number</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let age: number = 25;</code></td>
-                    <td class="border border-cyan-400 p-3">数値型（整数、小数、Infinity、NaN）</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>boolean</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let isActive: boolean = true;</code></td>
-                    <td class="border border-cyan-400 p-3">真偽値型（trueまたはfalse）</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>any</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let value: any = "anything";</code></td>
-                    <td class="border border-cyan-400 p-3">任意の型。型チェックを無効化</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>unknown</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let value: unknown = "anything";</code></td>
-                    <td class="border border-cyan-400 p-3">任意の型だが、使用前に型を絞る必要がある</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>void</code></td>
-                    <td class="border border-cyan-400 p-3"><code>function log(): void { }</code></td>
-                    <td class="border border-cyan-400 p-3">値を返さない関数の戻り値型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>null</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let value: null = null;</code></td>
-                    <td class="border border-cyan-400 p-3">nullを表す型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>undefined</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let value: undefined;</code></td>
-                    <td class="border border-cyan-400 p-3">undefinedを表す型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>never</code></td>
-                    <td class="border border-cyan-400 p-3"><code>function error(): never { throw Error(); }</code></td>
-                    <td class="border border-cyan-400 p-3">値を返さない（エラーまたは無限ループ）</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>object</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let obj: object = { };</code></td>
-                    <td class="border border-cyan-400 p-3">オブジェクト型（プリミティブ以外）</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>Type[]</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let nums: number[] = [1, 2, 3];</code></td>
-                    <td class="border border-cyan-400 p-3">配列型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>Union</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let value: string | number;</code></td>
-                    <td class="border border-cyan-400 p-3">複数の型のいずれか</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>Literal</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let direction: "up" | "down";</code></td>
-                    <td class="border border-cyan-400 p-3">特定の値に限定する型</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>Tuple</code></td>
-                    <td class="border border-cyan-400 p-3"><code>let tuple: [string, number];</code></td>
-                    <td class="border border-cyan-400 p-3">固定長の配列で要素ごとに型を指定</td>
-                  </tr>
-                  <tr class="hover:bg-cyan-100">
-                    <td class="border border-cyan-400 p-3"><code>enum</code></td>
-                    <td class="border border-cyan-400 p-3"><code>enum Color { Red, Green, Blue }</code></td>
-                    <td class="border border-cyan-400 p-3">名前付き定数の集合</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <h4>Q.ではTypeScriptで型宣言は必須なのか？</h4>
-            <ul>
-              <li>A.型推論により、必ずしも明示的な型宣言は必要ないです！（const variable = "text"; のように）</li>
-              <li>ただし、関数の引数・戻り値、データベースでは明示的な型宣言が推奨されます。</li>
-              </li>
-            </ul>
-          </section>
-          </details>
-        </article>
+								<p class="ml-4">
+									上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
+									<strong>指定しないとデフォルトでES5になります。</strong>
+								</p>
+								<p class="ml-4">"outDir": "dist",</p>
+								<p class="ml-4">
+									この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
+								</p>
+							</section>
+							<section>
+								<h3>TypeScriptの型一覧</h3>
+								<div class="overflow-x-auto m-4">
+									<table class="w-full border-collapse border border-cyan-400">
+										<thead
+											class="bg-gradient-to-r from-cyan-400 to-blue-900 text-white"
+										>
+											<tr>
+												<th class="border border-cyan-400 p-3 text-left">
+													型名
+												</th>
+												<th class="border border-cyan-400 p-3 text-left">
+													使用例
+												</th>
+												<th class="border border-cyan-400 p-3 text-left">
+													型の概要
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>string</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let name: string = "Alice";</code>
+												</td>
+												<td class="border border-cyan-400 p-3">文字列型</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>number</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let age: number = 25;</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													数値型（整数、小数、Infinity、NaN）
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>boolean</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let isActive: boolean = true;</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													真偽値型（trueまたはfalse）
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>any</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let value: any = "anything";</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													任意の型。型チェックを無効化
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>unknown</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let value: unknown = "anything";</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													任意の型だが、使用前に型を絞る必要がある
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>void</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>function log(): void { }</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													値を返さない関数の戻り値型
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>null</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let value: null = null;</code>
+												</td>
+												<td class="border border-cyan-400 p-3">nullを表す型</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>undefined</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let value: undefined;</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													undefinedを表す型
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>never</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code
+														>function error(): never { throw Error(); }</code
+													>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													値を返さない（エラーまたは無限ループ）
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>object</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let obj: object = { };</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													オブジェクト型（プリミティブ以外）
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>Type[]</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let nums: number[] = [1, 2, 3];</code>
+												</td>
+												<td class="border border-cyan-400 p-3">配列型</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>Union</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let value: string | number;</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													複数の型のいずれか
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>Literal</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let direction: "up" | "down";</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													特定の値に限定する型
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>Tuple</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>let tuple: [string, number];</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													固定長の配列で要素ごとに型を指定
+												</td>
+											</tr>
+											<tr class="hover:bg-cyan-100">
+												<td class="border border-cyan-400 p-3">
+													<code>enum</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													<code>enum Color { Red, Green, Blue }</code>
+												</td>
+												<td class="border border-cyan-400 p-3">
+													名前付き定数の集合
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<h4>Q.ではTypeScriptで型宣言は必須なのか？</h4>
+								<ul>
+									<li>
+										A.型推論により、必ずしも明示的な型宣言は必要ないです！（const
+										variable = "text"; のように）
+									</li>
+									<li>
+										ただし、関数の引数・戻り値、データベースでは明示的な型宣言が推奨されます。
+									</li>
+								</ul>
+							</section>
+						</details>
+					</article>
 
-        <article class="article">
-          <details>
-            <summary><h2 class="heading-two">TailWind css</h2></summary>
-            <section>
-              <p class="ml-4">このページではTailWind cssを試験的に導入しております。</p>
-              <pre><code>
+					<article class="article">
+						<details>
+							<summary><h2 class="heading-two">TailWind css</h2></summary>
+							<section>
+								<p class="ml-4">
+									このページではTailWind cssを試験的に導入しております。
+								</p>
+								<pre><code>
 &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
               </code></pre>
-              <p>Tailwind CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。</p>
-              <pre><code>
+								<p>
+									Tailwind
+									CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。
+								</p>
+								<pre><code>
 npm run build
               </code></pre>
-            </section>
-          </details>
-        </article>
-      </main>
-      </div>
+							</section>
+						</details>
+					</article>
+				</main>
+			</div>
 
-      <footer class="footer">
-        <p>&copy; 2026 RoadToTypeScript - Powered by <a href="https://cidertechlab.github.io/">CiderTechLab</a></p>
-      </footer>
-    </div>
-  </body>
+			<footer class="footer">
+				<p>
+					&copy; 2026 RoadToTypeScript - Powered by
+					<a href="https://cidertechlab.github.io/">CiderTechLab</a>
+				</p>
+			</footer>
+		</div>
+	</body>
 </html>
