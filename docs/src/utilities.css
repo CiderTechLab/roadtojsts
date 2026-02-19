@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import 'tailwindcss';
+@layer utilities {
+	/** h1 */
+	h1 {
+		@apply text-4xl font-bold;
+	}
+
+	/** h2 */
+	.heading-two {
+		counter-reset: h3-counter;
+		counter-increment: h2-counter;
+		@apply text-3xl m-4;
+	}
+	.heading-two::before {
+		content: counter(h2-counter) '. ';
+	}
+	.heading-two--about {
+		@apply bg-gray-500 text-white p-4;
+	}
+	.heading-two--js {
+		@apply bg-yellow-300 text-black p-4;
+	}
+	.heading-two--ts {
+		@apply bg-blue-900 text-white p-4;
+	}
+	.heading-two--tw {
+		@apply bg-cyan-500 text-white p-4;
+	}
+
+	/** h3 */
+	.heading-three {
+		counter-increment: h3-counter;
+		@apply text-2xl m-4 border-b border-gray-300;
+	}
+	.heading-three::before {
+		content: counter(h2-counter) '.' counter(h3-counter) ' ';
+	}
+
+	/** pre */
+	pre {
+		@apply bg-black text-white p-2 overflow-x-auto rounded-[0.5rem] my-[0.125rem];
+	}
+
+	/** code */
+	code {
+		@apply p-0;
+	}
+
+	/** links */
+	a {
+		@apply underline;
+	}
+
+	a:hover {
+		@apply no-underline text-sky-400;
+	}
+
+	/** table */
+	.table {
+		@apply border;
+	}
+}

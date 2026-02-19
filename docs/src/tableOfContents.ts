@@ -2,12 +2,12 @@
  * Table of Contents Generator
  * <main>要素内のh2, h3タグから自動的に目次を生成し、<aside>に挿入する
  */
-export {};
 
 interface HeadingElement {
 	level: number;
 	text: string;
 	id: string;
+	counterText: string;
 }
 
 /**
@@ -20,9 +20,23 @@ function getHeadings(): HeadingElement[] {
 	const headings: HeadingElement[] = [];
 	const headingElements = main.querySelectorAll('h2, h3');
 
+	let h2Counter = 0;
+	let h3Counter = 0;
+
 	headingElements.forEach((element, index) => {
 		const level = parseInt(element.tagName[1]);
 		const text = element.textContent || '';
+
+		// JavaScript側でカウンター値を手動計算
+		let counterText = '';
+		if (level === 2) {
+			h2Counter++;
+			h3Counter = 0;
+			counterText = `${h2Counter}. `;
+		} else if (level === 3) {
+			h3Counter++;
+			counterText = `${h2Counter}.${h3Counter} `;
+		}
 
 		// idが存在しない場合は自動生成
 		let id = element.id;
@@ -31,7 +45,7 @@ function getHeadings(): HeadingElement[] {
 			(element as HTMLElement).id = id;
 		}
 
-		headings.push({ level, text, id });
+		headings.push({ level, text, id, counterText });
 	});
 
 	return headings;
@@ -64,7 +78,10 @@ function generateTableOfContentsHTML(headings: HeadingElement[]): string {
 
 		// リストアイテムを追加
 		const indent = '  '.repeat(heading.level - 2 + 1);
-		html += `${indent}<li class="toc-item"><a href="#${heading.id}">${heading.text}</a></li>\n`;
+		const displayText = heading.counterText
+			? `${heading.counterText}${heading.text}`
+			: heading.text;
+		html += `${indent}<li class="toc-item"><a href="#${heading.id}">${displayText}</a></li>\n`;
 	});
 
 	// 残りのリストを閉じる
@@ -104,12 +121,7 @@ function applyStyles(aside: Element): void {
     aside {
       width: 250px;
       padding: 20px;
-      background-color: #f9fafb;
-      border-radius: 8px;
-    }
-
-    .toc {
-      font-size: 14px;
+      border-right: 1px solid #e5e7eb;
     }
 
     .toc h2 {

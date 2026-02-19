@@ -6,21 +6,34 @@
  * main要素内のh2, h3タグを取得する
  */
 function getHeadings() {
-    const main = document.querySelector("main");
+    const main = document.querySelector('main');
     if (!main)
         return [];
     const headings = [];
-    const headingElements = main.querySelectorAll("h2, h3");
+    const headingElements = main.querySelectorAll('h2, h3');
+    let h2Counter = 0;
+    let h3Counter = 0;
     headingElements.forEach((element, index) => {
         const level = parseInt(element.tagName[1]);
-        const text = element.textContent || "";
+        const text = element.textContent || '';
+        // JavaScript側でカウンター値を手動計算
+        let counterText = '';
+        if (level === 2) {
+            h2Counter++;
+            h3Counter = 0;
+            counterText = `${h2Counter}. `;
+        }
+        else if (level === 3) {
+            h3Counter++;
+            counterText = `${h2Counter}.${h3Counter} `;
+        }
         // idが存在しない場合は自動生成
         let id = element.id;
         if (!id) {
             id = `heading-${index}`;
             element.id = id;
         }
-        headings.push({ level, text, id });
+        headings.push({ level, text, id, counterText });
     });
     return headings;
 }
@@ -29,7 +42,7 @@ function getHeadings() {
  */
 function generateTableOfContentsHTML(headings) {
     if (headings.length === 0)
-        return "";
+        return '';
     let html = '<nav class="toc">\n';
     html += '  <h2 class="text-xl font-bold mb-4">目次</h2>\n';
     html += '  <ul class="toc-list">\n';
@@ -42,27 +55,30 @@ function generateTableOfContentsHTML(headings) {
         }
         // レベルが下がった場合、リストを閉じる
         while (currentLevel > heading.level) {
-            html += "    </ul>\n";
+            html += '    </ul>\n';
             currentLevel--;
         }
         // リストアイテムを追加
-        const indent = "  ".repeat(heading.level - 2 + 1);
-        html += `${indent}<li class="toc-item"><a href="#${heading.id}">${heading.text}</a></li>\n`;
+        const indent = '  '.repeat(heading.level - 2 + 1);
+        const displayText = heading.counterText
+            ? `${heading.counterText}${heading.text}`
+            : heading.text;
+        html += `${indent}<li class="toc-item"><a href="#${heading.id}">${displayText}</a></li>\n`;
     });
     // 残りのリストを閉じる
     while (currentLevel > 2) {
-        html += "    </ul>\n";
+        html += '    </ul>\n';
         currentLevel--;
     }
-    html += "  </ul>\n";
-    html += "</nav>\n";
+    html += '  </ul>\n';
+    html += '</nav>\n';
     return html;
 }
 /**
  * 目次を<aside>に挿入する
  */
 function insertTableOfContents() {
-    const aside = document.querySelector("aside");
+    const aside = document.querySelector('aside');
     if (!aside)
         return;
     const headings = getHeadings();
@@ -75,17 +91,12 @@ function insertTableOfContents() {
  * 目次要素にスタイルを適用する
  */
 function applyStyles(aside) {
-    const style = document.createElement("style");
+    const style = document.createElement('style');
     style.textContent = `
     aside {
       width: 250px;
       padding: 20px;
-      background-color: #f9fafb;
-      border-radius: 8px;
-    }
-
-    .toc {
-      font-size: 14px;
+      border-right: 1px solid #e5e7eb;
     }
 
     .toc h2 {
@@ -134,9 +145,10 @@ function applyStyles(aside) {
 /**
  * DOM読み込み完了時に目次を生成
  */
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", insertTableOfContents);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertTableOfContents);
 }
 else {
     insertTableOfContents();
 }
+export {};

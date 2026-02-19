@@ -12,10 +12,10 @@
 		<title>Road&nbsp;To&nbsp;JS&nbsp;&amp;&nbsp;TS</title>
 
 		<!-- style info -->
-		<link rel="stylesheet" href="/docs/style.css" />
+		<link rel="stylesheet" href="index.css" />
 
 		<!-- script info -->
-		<script src="/docs/tableOfContents.js" defer></script>
+		<script type="module" src="tableOfContents.js" defer></script>
 	</head>
 	<body>
 		<div class="layout">
@@ -30,21 +30,11 @@
 				<aside></aside>
 
 				<main class="pb-20 p-4">
-					<article class="hero">
-						<section class="hero-section">
-							<p class="hero-section__slogan">
-								「書ける」から「説明できる」へ。
-							</p>
-							<p class="hero-section__subtext">TypeScript Master Road.</p>
-						</section>
-					</article>
-
 					<article class="article">
+						<h2 class="heading-two heading-two--about">About</h2>
 						<details>
-							<summary><h2 class="heading-two">当サイト制作の流れ</h2></summary>
-
+							<summary><h3 class="heading-three">このサイトの構築プロセス</h3></summary>
 							<section class="ml-4">
-								<h3>このサイトの構築プロセス</h3>
 								<p class="ml-4 mb-4">
 									RoadToTypeScriptは、<strong>生成AIの支援を受けながら段階的に</strong>構築されました。以下は制作の基本的なフローです。
 								</p>
@@ -87,18 +77,21 @@
 									</li>
 								</ol>
 							</section>
+						</details>
 
-							<section class="ml-4 mt-6">
-								<h3>まとめ</h3>
+
+						<details>
+							<summary><h3 class="heading-three">まとめ</h3></summary>
+								<section class="ml-4 mt-6">
 								<p class="ml-4">
 									この段階的で反復的なアプローチにより、機能追加とデザイン調整を効率的に進めることができます。
 								</p>
-							</section>
+								</section>
 						</details>
 					</article>
 
 					<article class="article">
-						<h2 class="heading-two">JavaScript</h2>
+						<h2 class="heading-two heading-two--js">JavaScript</h2>
 						<details>
 							<summary><h3 class="heading-three">歴史</h3></summary>
 							<ul>
@@ -118,7 +111,7 @@
 						</details>
 						<details>
 							<summary>
-								<h3 class="heading-three">Node.jsでのJavaScript実行</h3>
+								<h3 class="heading-three">Node.js上でのJavaScript実行</h3>
 							</summary>
 							以下のコマンドで実行できる。
 							<pre><code>
@@ -127,11 +120,11 @@ node [filename].js
 						</details>
 						<details>
 							<summary><h3 class="heading-three">変数、定数</h3></summary>
-							<table>
+							<table class="table">
 								<thead>
 									<tr>
-										<th>オペランド</th>
 										<th>宣言</th>
+										<th>再代入</th>
 										<th>再宣言</th>
 										<th>スコープ</th>
 										<th>巻き上げ</th>
@@ -140,20 +133,20 @@ node [filename].js
 								</thead>
 								<tbody>
 									<tr>
-										<td>let</td>
-										<td>&#9675;</td>
-										<td>&#215;</td>
-										<td>ブロックスコープ</td>
-										<td>&#215;</td>
-										<td>constの次に使用するべき。</td>
-									</tr>
-									<tr>
 										<td>const</td>
 										<td>&#215;</td>
 										<td>&#215;</td>
 										<td>ブロックスコープ</td>
 										<td>&#215;</td>
 										<td><strong>最優先で使うべき。</strong>初期値が必要。</td>
+									</tr>
+									<tr>
+										<td>let</td>
+										<td>&#9675;</td>
+										<td>&#215;</td>
+										<td>ブロックスコープ</td>
+										<td>&#215;</td>
+										<td>constの次に使用するべき。</td>
 									</tr>
 									<tr>
 										<td>var</td>
@@ -169,34 +162,34 @@ node [filename].js
 					</article>
 
 					<article class="article">
-						<details>
-							<summary>
-								<h2 class="heading-two">TypeScript 学習メモ</h2>
-							</summary>
+						<h2 class="heading-two heading-two--ts">TypeScript</h2>
 							<section>
-								<h3>tsconfig.json</h3>
-								<p class="ml-4">
-									TypeScriptのコンパイル設定を記述するファイルです。
-								</p>
-								<pre><code>
+								<details>
+								<summary><h3 class="heading-three">tsconfig.json</h3></summary>
+									<p class="ml-4">
+										TypeScriptのコンパイル設定を記述するファイルです。
+									</p>
+									<pre><code>
 {
   "compilerOptions": {
     "target": "es2015"
   }
 }
-            </code></pre>
-								<p class="ml-4">
-									上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
-									<strong>指定しないとデフォルトでES5になります。</strong>
-								</p>
-								<p class="ml-4">"outDir": "dist",</p>
-								<p class="ml-4">
-									この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
-								</p>
+									</code></pre>
+											<p class="ml-4">
+												上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
+												<strong>指定しないとデフォルトでES5になります。</strong>
+											</p>
+											<p class="ml-4">"outDir": "dist",</p>
+											<p class="ml-4">
+												この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
+											</p>
+								</details>
 							</section>
 							<section>
-								<h3>TypeScriptの型一覧</h3>
-								<div class="overflow-x-auto m-4">
+								<details>
+								<summary><h3 class="heading-three">TypeScriptの型一覧</h3></summary>
+									<div class="overflow-x-auto m-4">
 									<table class="w-full border-collapse border border-cyan-400">
 										<thead
 											class="bg-gradient-to-r from-cyan-400 to-blue-900 text-white"
@@ -393,22 +386,23 @@ node [filename].js
 					</article>
 
 					<article class="article">
-						<details>
-							<summary><h2 class="heading-two">TailWind css</h2></summary>
+						<h2 class="heading-two heading-two--tw">Tailwind CSS</h2>
 							<section>
+								<details>
+									<summary><h3 class="heading-three">導入方法</h3></summary>
 								<p class="ml-4">
-									このページではTailWind cssを試験的に導入しております。
+									このページではTailwind CSSを試験的に導入しております。
 								</p>
 								<pre><code>
 &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
-              </code></pre>
+              	</code></pre>
 								<p>
 									Tailwind
 									CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。
 								</p>
 								<pre><code>
 npm run build
-              </code></pre>
+								</code></pre>
 							</section>
 						</details>
 					</article>

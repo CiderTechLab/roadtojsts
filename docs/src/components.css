@@ -1,23 +1,5 @@
 @charset "UTF-8";
 @import 'tailwindcss';
-
-/** CSSカスタムプロパティ */
-:root {
-	--height-header: 80px;
-	--height-footer: 40px;
-	--text-primary: #374151;
-	font-family:
-		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial,
-		'Hiragino Kaku Gothic ProN', 'Noto Sans JP', メイリオ, sans-serif;
-	line-height: 1.5;
-}
-
-@layer base {
-	body {
-		color: var(--text-primary);
-	}
-}
-
 @layer components {
 	/** 2カラムレイアウト */
 	.layout__inner {
@@ -47,9 +29,12 @@
 	main {
 		counter-reset: h2-counter;
 	}
-	.article {
-		@apply border-t border-gray-300 mt-4;
-	}
+
+	/**
+	 * TODO: 予備
+	 *.article {
+	 * }
+	 */
 
 	/** hero section */
 	.hero {
@@ -82,7 +67,7 @@
 		display: inline-block;
 		margin-right: 0.5rem;
 		transition: transform 0.2s ease;
-		color: #0891b2;
+		color: var(--text-primary);
 	}
 
 	details[open] > summary::before {
@@ -97,45 +82,6 @@
 	}
 }
 
-@layer utilities {
-	/** h1 */
-	h1 {
-		@apply text-4xl font-bold;
-	}
-
-	/** h2 */
-	.heading-two {
-		counter-increment: h2-counter;
-		@apply text-3xl m-4;
-	}
-	.heading-two::before {
-		content: counter(h2-counter) '. ';
-	}
-
-	/** h3 */
-	h3 {
-		@apply text-2xl m-4;
-	}
-
-	/** pre */
-	pre {
-		@apply bg-black text-white p-2 overflow-x-auto rounded-[0.5rem] my-[0.125rem];
-	}
-
-	/** code */
-	code {
-		@apply p-0;
-	}
-
-	/** links */
-	a {
-		@apply underline;
-	}
-
-	a:hover {
-		@apply no-underline text-sky-400;
-	}
-}
 @media (min-width: 1024px) {
 	@layer components {
 		.layout__inner {

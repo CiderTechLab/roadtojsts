@@ -4,11 +4,13 @@
 		"@types/node": "^25.1.0",
 		"postcss": "^8.5.6",
 		"postcss-cli": "^11.0.1",
+		"postcss-import": "^16.1.1",
 		"tailwindcss": "^4.1.18",
 		"typescript": "^5.9.3"
 	},
 	"scripts": {
-		"build": "postcss docs/src/style.css -o docs/style.css"
+		"build": "postcss docs/src/*.css -d docs/",
+		"build:ts": "tsc -b"
 	},
 	"name": "roadtotypescript",
 	"version": "1.0.0",

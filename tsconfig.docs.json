@@ -1,8 +1,10 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
+		"rootDir": "./docs/src",
 		"outDir": "./docs",
 		"composite": true
 	},
-	"include": ["docs/src/*"]
+	"include": ["docs/src/*.ts"],
+	"exclude": []
 }
