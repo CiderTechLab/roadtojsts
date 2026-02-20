@@ -121,3 +121,47 @@ function pointJudge2(grade) {
 	return console.log(changeGrade);
 }
 pointJudge2('D');
+
+/**
+ * 例外処理
+ * - 例外を制御するための構文。
+ * - JavaScriptエンジンが自動的に発生させる例外
+ *   - ReferenceError: 未定義の変数や関数を参照した場合などに発生。
+ *   - TypeError: 値の型が期待される型と異なる場合に発生。
+ *   - SyntaxError: 文法エラーがある場合に発生。
+ * - 開発者が明示的に発生させる例外
+ *   - throw文: 例外を発生させるための構文。
+ *     - 外部リソースの接続失敗時を把握するためにも使用される。
+ *   	 - 流れを中断して上に投げるので、tryブロック外使用だとthrow実行で処理終了となる。
+ *     - 「この関数内で処理を完結できるか？」
+ *       - YES → return
+ *       - NO → throw
+ *
+ * Q. JavaScriptエンジンが自動的に発生させる例外が発生しても、処理を続行するには？
+ * A. try-catch-finally構文を使用する。
+ *    - tryブロック: 例外が発生する可能性のあるコードを囲む。
+ *    - catchブロック: 例外が発生した場合に実行されるコードを囲む。例外オブジェクトを引数として受け取ることができる。
+ *    - finallyブロック: 例外の有無に関わらず、必ず実行されるコードを囲む。
+ *      - 例）ファイルを閉じる、データベース接続切断などの処理に使用される。
+ */
+console.log('---例外処理---');
+try {
+	functionThatDoesNotExist(); // ReferenceErrorが発生する。
+	console.log('この行は実行されません。');
+} catch (error) {
+	console.error('エラーが発生しました。', error);
+} finally {
+	console.log('エラーが発生しましたが、この行は表示されます。');
+}
+
+console.log('---明示的な例外処理（throw文）---');
+try {
+	const age3 = -5;
+	if (age3 < 0) {
+		throw new Error('年齢は0以上でなければなりません。');
+	}
+} catch (error) {
+	console.error('エラーが発生しました。', error);
+} finally {
+	console.log('エラーが発生しましたが、この行は表示されます。');
+}

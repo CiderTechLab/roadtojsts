@@ -94,71 +94,86 @@
 						<h2 class="heading-two heading-two--js">JavaScript</h2>
 						<details>
 							<summary><h3 class="heading-three">歴史</h3></summary>
-							<ul>
-								<li>
-									開発者は<a
-										href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
-										>ブレンダン・アイク</a
-									>
-								</li>
-								<li>
-									ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！
-								</li>
-								<li>
-									JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！
-								</li>
-							</ul>
+								<section>
+									<ul>
+										<li>
+											開発者は<a
+												href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
+												>ブレンダン・アイク</a
+											>
+										</li>
+										<li>
+											ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！
+										</li>
+										<li>
+											JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！
+										</li>
+									</ul>
+							</section>
 						</details>
-						<details>
-							<summary>
-								<h3 class="heading-three">Node.js上でのJavaScript実行</h3>
-							</summary>
-							以下のコマンドで実行できる。
-							<pre><code>
-node [filename].js
-          </code></pre>
-						</details>
-						<details>
-							<summary><h3 class="heading-three">変数、定数</h3></summary>
-							<table class="table">
-								<thead>
-									<tr>
-										<th>宣言</th>
-										<th>再代入</th>
-										<th>再宣言</th>
-										<th>スコープ</th>
-										<th>巻き上げ</th>
-										<th>備考</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>const</td>
-										<td>&#215;</td>
-										<td>&#215;</td>
-										<td>ブロックスコープ</td>
-										<td>&#215;</td>
-										<td><strong>最優先で使うべき。</strong>初期値が必要。</td>
-									</tr>
-									<tr>
-										<td>let</td>
-										<td>&#9675;</td>
-										<td>&#215;</td>
-										<td>ブロックスコープ</td>
-										<td>&#215;</td>
-										<td>constの次に使用するべき。</td>
-									</tr>
-									<tr>
-										<td>var</td>
-										<td>&#9675;</td>
-										<td>&#9675;</td>
-										<td>関数スコープ</td>
-										<td>&#9675;</td>
-										<td><strong>非推奨。</strong></td>
-									</tr>
-								</tbody>
-							</table>
-						</details>
+								<details>
+									<summary>
+										<h3 class="heading-three">Node.js上でのJavaScript実行</h3>
+									</summary>
+									以下のコマンドで実行できる。
+									<pre><code>
+		node [filename].js
+							</code></pre>
+								</details>
+								<details>
+									<summary><h3 class="heading-three">変数、定数</h3></summary>
+									<table class="table">
+										<thead>
+											<tr>
+												<th>宣言</th>
+												<th>初期値</th>
+												<th>再宣言</th>
+												<th>再代入</th>
+												<th>スコープ</th>
+												<th>巻き上げ</th>
+												<th>備考</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>const</td>
+												<td>必須</td>
+												<td>&#215;</td>
+												<td>&#215;</td>
+												<td>ブロックスコープ</td>
+												<td>&#215;</td>
+												<td><strong>最優先で使うべき。</strong></td>
+											</tr>
+											<tr>
+												<td>let</td>
+												<td>undefined（→実質必須な事が多い）</td>
+												<td>&#215;</td>
+												<td>&#9675;</td>
+												<td>ブロックスコープ</td>
+												<td>&#215;</td>
+												<td>constの次に使用するべき。</td>
+											</tr>
+											<tr>
+												<td>var</td>
+												<td>undefined</td>
+												<td>&#9675;</td>
+												<td>&#9675;</td>
+												<td>関数スコープ</td>
+												<td>&#9675;</td>
+												<td><strong>非推奨。</strong></td>
+											</tr>
+										</tbody>
+									</table>
+								</details>
+								<details>
+									<summary><h3 class="heading-three">データ型</h3></summary>
+										<section>
+											<ul>
+												<li>プリミティブ型：string, number, boolean, null, undefined, symbol, bigint</li>
+												<li>オブジェクト型：object, array, functionなど</li>
+											</ul>
+										</section>
+								</details>
 					</article>
 
 					<article class="article">
