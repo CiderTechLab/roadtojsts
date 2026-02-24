@@ -213,5 +213,17 @@
 		aside.is-open .toc {
 			display: block;
 		}
+
+		/** モバイルメニュー用バックドロップ（is-open時に表示） */
+		aside.is-open::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			z-index: -1;
+		}
 	}
 }
