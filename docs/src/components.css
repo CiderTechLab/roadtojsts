@@ -172,46 +172,34 @@
 		/** 下ライン */
 		.toc-hamburger__icon::after {
 			content: '';
-			@apply absolute left-0 block;
-			width: 1.5rem;
-			height: 2px;
-			background-color: #374151;
-			top: 6px;
+			@apply absolute left-0 block w-6 h-[2px] bg-gray-700 top-1.5;
 			transition: transform 0.3s ease, top 0.3s ease;
 		}
 
 		/** バツ印（is-open時）- 中央ラインを非表示 */
 		aside.is-open .toc-hamburger__icon {
-			background-color: transparent;
+			@apply bg-transparent;
 		}
 
 		/** バツ印 - 上ラインを45度回転 */
 		aside.is-open .toc-hamburger__icon::before {
-			transform: rotate(45deg);
-			top: 0;
+			@apply rotate-45 top-0;
 		}
 
 		/** バツ印 - 下ラインを-45度回転 */
 		aside.is-open .toc-hamburger__icon::after {
-			transform: rotate(-45deg);
-			top: 0;
+			@apply -rotate-45 top-0;
 		}
 
 		/** TOCナビ（デフォルトで非表示） */
 		aside .toc {
-			display: none;
-			background-color: white;
-			border: 1px solid #e5e7eb;
-			border-top: none;
-			padding: 1rem;
-			width: 250px;
+			@apply hidden bg-white border border-gray-200 border-t-0 p-4 w-[250px] overflow-y-auto;
 			max-height: calc(100vh - var(--height-header) - var(--height-footer) - 2.5rem);
-			overflow-y: auto;
 		}
 
 		/** TOCナビ（is-open時に表示） */
 		aside.is-open .toc {
-			display: block;
+			@apply block;
 		}
 
 		/** モバイルメニュー用バックドロップ（is-open時に表示） */
