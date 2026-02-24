@@ -122,16 +122,19 @@ function insertTableOfContents(): void {
 		});
 	}
 
-	// TOCリンクのクリック後にメニューを閉じる
-	const tocLinks = aside.querySelectorAll('.toc-item a');
-	tocLinks.forEach((link) => {
-		link.addEventListener('click', () => {
-			aside.classList.remove('is-open');
-			if (hamburger) {
-				hamburger.setAttribute('aria-expanded', 'false');
-				hamburger.setAttribute('aria-label', '目次を開く');
-			}
-		});
+	// TOCリンクのクリック後にメニューを閉じる（イベントデリゲーション）
+	aside.addEventListener('click', (event: MouseEvent) => {
+		const target = event.target as HTMLElement | null;
+		const link = target?.closest<HTMLAnchorElement>('.toc-item a');
+		if (!link) {
+			return;
+		}
+
+		aside.classList.remove('is-open');
+		if (hamburger) {
+			hamburger.setAttribute('aria-expanded', 'false');
+			hamburger.setAttribute('aria-label', '目次を開く');
+		}
 	});
 
 	// スタイルの追加
