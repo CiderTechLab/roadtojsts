@@ -29,12 +29,14 @@
 			<div class="layout__inner">
 				<aside></aside>
 
-				<main class="pb-20 p-4">
+				<main class="main">
 					<article class="article">
 						<h2 class="heading-two heading-two--about">About</h2>
 						<details>
-							<summary><h3 class="heading-three">このサイトの構築プロセス</h3></summary>
-						<section class="section">
+							<summary>
+								<h3 class="heading-three">このサイトの構築プロセス</h3>
+							</summary>
+							<section class="section">
 								<p class="ml-4 mb-4">
 									RoadToTypeScriptは、<strong>生成AIの支援を受けながら段階的に</strong>構築されました。以下は制作の基本的なフローです。
 								</p>
@@ -78,94 +80,89 @@
 								</ol>
 							</section>
 						</details>
-
-						<details>
-							<summary><h3 class="heading-three">まとめ</h3></summary>
-								<section class="section ml-4 mt-6">
-								<p class="ml-4">
-									この段階的で反復的なアプローチにより、機能追加とデザイン調整を効率的に進めることができます。
-								</p>
-								</section>
-						</details>
 					</article>
 
 					<article class="article">
 						<h2 class="heading-two heading-two--js">JavaScript</h2>
 						<details>
 							<summary><h3 class="heading-three">歴史</h3></summary>
-								<section class="section">
-									<ul>
-										<li>
-											開発者は<a
-												href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
-												>ブレンダン・アイク</a
-											>
-										</li>
-										<li>
-											ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！
-										</li>
-										<li>
-											JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！
-										</li>
-									</ul>
+							<section class="section">
+								<ul>
+									<li>
+										開発者は<a
+											href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
+											>ブレンダン・アイク</a
+										>
+									</li>
+									<li>
+										ブレンダン・アイクはMozillaのCEOも経験し、現在ではなんとブラウザのBraveの開発に携わっている！
+									</li>
+									<li>
+										JavaScript（JS）は最初は簡単な用途を想定して設計され、「Java風のプログラミング言語作ってくれ。」と言われなんと10日で作成！
+									</li>
+								</ul>
 							</section>
 						</details>
 						<details>
 							<summary><h3 class="heading-three">実行方法</h3></summary>
-								<section class="section">
-									<h4>Node.js上での実行</h4>
-									<p>以下のコマンドで実行できる。</p>
-									<pre><code>
+							<section class="section">
+								<h4>Node.js上での実行</h4>
+								<p>以下のコマンドで実行できる。</p>
+								<pre><code>
 node [filename].js
 									</code></pre>
-								</section>
+							</section>
 						</details>
 						<details>
 							<summary><h3 class="heading-three">命名規則</h3></summary>
-								<section class="section">
-									<table class="table">
-										<thead class="thead">
-											<tr>
-												<th>命名規則</th>
-												<th>読み方</th>
-												<th>例</th>
-												<th>用途</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>camelCase</td>
-												<td>キャメルケース</td>
-												<td>myVariable, userName</td>
-												<td>変数で使われる</td>
-											</tr>
-											<tr>
-												<td>PascalCase</td>
-												<td>パスカルケース</td>
-												<td>MyClass, User</td>
-												<td>クラス名、コンストラクタ関数で使われる</td>
-											</tr>
-											<tr>
-												<td>snake_case</td>
-												<td>スネークケース</td>
-												<td>my_variable, user_name</td>
-												<td>変数や関数で使われる（キャメルよりは頻度少）</td>
-											</tr>
-											<tr>
-												<td>kebab-case</td>
-												<td>ケバブケース</td>
-												<td>can-not-use</td>
-												<td>JavaScriptでは変数や関数で使えないこともあり、あまり使われない。</td>
-											</tr>
-										</tbody>	
-									</table>
-								</section>
+							<section class="section">
+								<table class="table">
+									<thead class="thead">
+										<tr>
+											<th>命名規則</th>
+											<th>読み方</th>
+											<th>例</th>
+											<th>用途</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>camelCase</td>
+											<td>キャメルケース</td>
+											<td>myVariable, userName</td>
+											<td>変数で使われる</td>
+										</tr>
+										<tr>
+											<td>PascalCase</td>
+											<td>パスカルケース</td>
+											<td>MyClass, User</td>
+											<td>クラス名、コンストラクタ関数で使われる</td>
+										</tr>
+										<tr>
+											<td>snake_case</td>
+											<td>スネークケース</td>
+											<td>my_variable, user_name</td>
+											<td>変数や関数で使われる（キャメルよりは頻度少）</td>
+										</tr>
+										<tr>
+											<td>kebab-case</td>
+											<td>ケバブケース</td>
+											<td>can-not-use</td>
+											<td>
+												JavaScriptでは変数や関数で使えないこともあり、あまり使われない。
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</section>
 						</details>
 						<details>
-							<summary><h3 class="heading-three">変数、定数、データ型</h3></summary>
+							<summary>
+								<h3 class="heading-three">変数、定数、データ型</h3>
+							</summary>
 							<section class="section">
 								<h4>変数、定数</h4>
-									<table class="table">
+								<table class="table">
 									<thead class="thead">
 										<tr>
 											<th>宣言</th>
@@ -226,7 +223,10 @@ node [filename].js
 										<tr>
 											<td>プリミティブ型</td>
 											<td>Number</td>
-											<td>数値（整数、浮動小数点数、Infinity、NaN）、-(2^53-1)〜2^53-1、※2^53 - 1 = 9007199254740991</td>
+											<td>
+												数値（整数、浮動小数点数、Infinity、NaN）、-(2^53-1)〜2^53-1、※2^53
+												- 1 = 9007199254740991
+											</td>
 										</tr>
 										<tr>
 											<td>プリミティブ型</td>
@@ -270,49 +270,51 @@ node [filename].js
 										</tr>
 									</tbody>
 								</table>
-							</section>						
+							</section>
 						</details>
 						<details>
 							<summary><h3 class="heading-three">制御構文</h3></summary>
-								<section class="section">
-									<ul>
-										<li>条件分岐：if, else if, else, switch</li>
-										<li>ループ：for, while, do...while, for...in, for...of</li>
-										<li>例外処理：try...catch...finally</li>
-									</ul>
-								</section>
+							<section class="section">
+								<ul>
+									<li>条件分岐：if, else if, else, switch</li>
+									<li>ループ：for, while, do...while, for...in, for...of</li>
+									<li>例外処理：try...catch...finally</li>
+								</ul>
+							</section>
 						</details>
 					</article>
 
 					<article class="article">
 						<h2 class="heading-two heading-two--ts">TypeScript</h2>
+						<details>
+							<summary><h3 class="heading-three">tsconfig.json</h3></summary>
 							<section class="section">
-								<details>
-								<summary><h3 class="heading-three">tsconfig.json</h3></summary>
-									<p class="ml-4">
-										TypeScriptのコンパイル設定を記述するファイルです。
-									</p>
-									<pre><code>
+								<p class="ml-4">
+									TypeScriptのコンパイル設定を記述するファイルです。
+								</p>
+								<pre><code>
 {
   "compilerOptions": {
     "target": "es2015"
   }
 }
 									</code></pre>
-											<p class="ml-4">
-												上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
-												<strong>指定しないとデフォルトでES5になります。</strong>
-											</p>
-											<p class="ml-4">"outDir": "dist",</p>
-											<p class="ml-4">
-												この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
-											</p>
-								</details>
+								<p class="ml-4">
+									上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
+									<strong>指定しないとデフォルトでES5になります。</strong>
+								</p>
+								<p class="ml-4">"outDir": "dist",</p>
+								<p class="ml-4">
+									この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
+								</p>
 							</section>
+						</details>
+						<details>
+							<summary>
+								<h3 class="heading-three">TypeScriptの型一覧</h3>
+							</summary>
 							<section class="section">
-								<details>
-								<summary><h3 class="heading-three">TypeScriptの型一覧</h3></summary>
-									<div class="overflow-x-auto m-4">
+								<div class="overflow-x-auto m-4">
 									<table class="w-full border-collapse border border-cyan-400">
 										<thead
 											class="thead bg-gradient-to-r from-cyan-400 to-blue-900 text-white"
@@ -512,21 +514,21 @@ node [filename].js
 						<h2 class="heading-two heading-two--tw">Tailwind CSS</h2>
 						<details>
 							<summary><h3 class="heading-three">導入方法</h3></summary>
-								<section class="section">
-									<p class="ml-4">
-										このページではTailwind CSSを試験的に導入しております。
-									</p>
-									<pre><code>
+							<section class="section">
+								<p class="ml-4">
+									このページではTailwind CSSを試験的に導入しております。
+								</p>
+								<pre><code>
 &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
 									</code></pre>
-									<p>
-										Tailwind
-										CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。
-									</p>
-									<pre><code>
+								<p>
+									Tailwind
+									CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。
+								</p>
+								<pre><code>
 npm run build
 									</code></pre>
-								</section>
+							</section>
 						</details>
 					</article>
 				</main>
@@ -534,8 +536,10 @@ npm run build
 
 			<footer class="footer">
 				<p>
-					&copy; 2026 RoadToTypeScript - Powered by
-					<a href="https://cidertechlab.github.io/">CiderTechLab</a>
+					&copy; 2026 RoadToTypeScript<span
+						>Powered by
+						<a href="https://cidertechlab.github.io/">CiderTechLab</a></span
+					>
 				</p>
 			</footer>
 		</div>

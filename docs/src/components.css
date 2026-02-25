@@ -1,5 +1,10 @@
 @charset "UTF-8";
 @import 'tailwindcss';
+/**
+ * - モバイルファースト
+ * - デスクトップは1024px以上
+ *   - 2カラムレイアウト（デスクトップのみ）
+ */
 @layer components {
 	/** 2カラムレイアウト */
 	.layout__inner {
@@ -10,7 +15,7 @@
 
 	/** header */
 	.header {
-		@apply fixed w-full p-4 flex items-center gap-8 bg-white border-b border-gray-300;
+		@apply fixed w-full p-4 pl-14 flex items-center gap-8 bg-white border-b border-gray-300;
 		color: var(--text-primary);
 		height: var(--height-header);
 	}
@@ -27,7 +32,15 @@
   * @memo h2-counter CSSカウンターのこと。ただし、CSS変数ではない。
   */
 	main {
+		@apply pb-20 p-1;
 		counter-reset: h2-counter;
+		order: 0;
+	}
+
+	/** アンカーリンク時のスクロール位置調整 */
+	h2,
+	h3 {
+		scroll-margin-top: calc(var(--height-header) + 1rem);
 	}
 
 	/**
@@ -35,6 +48,91 @@
 	 *.article {
 	 * }
 	 */
+	.layout__inner {
+		@apply flex flex-col;
+		padding-top: var(--height-header);
+		padding-bottom: var(--height-footer);
+	}
+
+	aside {
+		@apply fixed left-0 z-50 w-screen h-screen;
+	}
+
+	/** ハンバーガーボタン - ヘッダーと同じ高さで左上固定 */
+	.toc-hamburger {
+		@apply flex items-center justify-center bg-transparent cursor-pointer fixed top-0 left-0;
+		width: 3rem;
+		height: var(--height-header);
+		border: none;
+		z-index: 51;
+	}
+
+	/** 3本線（中央ライン） */
+	.toc-hamburger__icon {
+		@apply relative block;
+		width: 1.5rem;
+		height: 2px;
+		background-color: var(--color-border-primary);
+		transition: background-color 0.3s ease;
+	}
+
+	/** 上ライン */
+	.toc-hamburger__icon::before {
+		content: '';
+		@apply absolute left-0 block -top-2 origin-left;
+		width: 1.5rem;
+		height: 2px;
+		background-color: var(--color-border-primary);
+		transition:
+			transform 0.3s ease,
+			top 0.3s ease;
+	}
+
+	/** 下ライン */
+	.toc-hamburger__icon::after {
+		content: '';
+		@apply absolute left-0 block w-6 h-[2px] bg-gray-700 top-2 origin-left;
+		transition:
+			transform 0.3s ease,
+			top 0.3s ease;
+	}
+
+	/** X印（is-open時） - 上ラインを45度回転 */
+	aside.is-open .toc-hamburger__icon::before {
+		transform: translateY(-50%) rotate(40deg);
+	}
+
+	/** X印（is-open時）- 中央ラインを非表示 */
+	aside.is-open .toc-hamburger__icon {
+		@apply bg-transparent;
+	}
+
+	/** X印（is-open時） - 下ラインを-45度回転 */
+	aside.is-open .toc-hamburger__icon::after {
+		transform: translateY(-50%) rotate(-40deg);
+	}
+
+	/** TOCナビ（デフォルトで非表示） */
+	aside .toc {
+		@apply hidden bg-white border-gray-200 p-4 w-full overflow-y-auto;
+		height: 100vh;
+	}
+
+	/** TOCナビ（is-open時に表示） */
+	aside.is-open .toc {
+		@apply block;
+	}
+
+	/** モバイルメニュー用バックドロップ（is-open時に表示） */
+	aside.is-open::before {
+		content: '';
+		position: fixed;
+		top: var(--height-header);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
 
 	/** section */
 	.section {
@@ -55,22 +153,18 @@
 		@apply text-2xl text-gray-600;
 	}
 
-	/** summary elements */
+	/** summary */
 	summary {
 		cursor: pointer;
 		user-select: none;
 		list-style: none;
 	}
-
 	summary::-webkit-details-marker {
 		display: none;
 	}
-
-	/** カスタム矢印を追加 */
 	summary::before {
 		content: '▼';
 		display: inline-block;
-		margin-right: 0.5rem;
 		transition: transform 0.2s ease;
 		color: var(--text-primary);
 	}
@@ -81,14 +175,23 @@
 
 	/** footer */
 	.footer {
-		@apply fixed bottom-0 w-full p-4 bg-white border-t border-gray-300 flex justify-end items-center;
+		@apply fixed bottom-0 w-full p-4 bg-white border-t border-gray-300 flex justify-start items-center;
 		color: var(--text-primary);
 		height: var(--height-footer);
 	}
+
+	.footer span {
+		@apply block;
+	}
 }
 
+/** PC Edition */
 @media (min-width: 1024px) {
 	@layer components {
+		.header {
+			@apply pl-4;
+		}
+
 		.layout__inner {
 			@apply grid;
 			grid-template-columns: 250px 1fr;
@@ -104,119 +207,21 @@
 			overflow-y: auto;
 		}
 
+		aside .toc {
+			@apply block;
+		}
+
 		main {
-			grid-column: 2;
-			order: 2;
+			@apply pb-20 p-4 col-span-1 order-2;
 		}
 
 		/** ハンバーガーボタンはデスクトップで非表示 */
 		.toc-hamburger {
 			display: none;
 		}
-	}
-}
 
-/** モバイルレイアウト（1024px未満） */
-@media (max-width: 1023px) {
-	@layer components {
-		.layout__inner {
-			@apply flex flex-col;
-			padding-top: var(--height-header);
-			padding-bottom: var(--height-footer);
-		}
-
-		aside {
-			@apply fixed left-0 z-50;
-		}
-
-		main {
-			order: 0;
-		}
-
-		/** ハンバーガーボタン - ヘッダーと同じ高さで左上固定 */
-		.toc-hamburger {
-			@apply flex items-center justify-center bg-transparent cursor-pointer fixed left-0;
-			top: 0;
-			width: 3rem;
-			height: var(--height-header);
-			border: none;
-			z-index: 51;
-		}
-
-		/** ヘッダー - ハンバーガーボタン分の余白を左に追加 */
-		.header {
-			padding-left: 3.5rem;
-		}
-
-		/** 3本線（中央ライン） */
-		.toc-hamburger__icon {
-			@apply relative block;
-			width: 1.5rem;
-			height: 2px;
-			background-color: #374151;
-			transition: background-color 0.3s ease;
-		}
-
-		/** 上ライン */
-		.toc-hamburger__icon::before {
-			content: '';
-			@apply absolute left-0 block;
-			width: 1.5rem;
-			height: 2px;
-			background-color: #374151;
-			top: -6px;
-			transition:
-				transform 0.3s ease,
-				top 0.3s ease;
-		}
-
-		/** 下ライン */
-		.toc-hamburger__icon::after {
-			content: '';
-			@apply absolute left-0 block w-6 h-[2px] bg-gray-700 top-1.5;
-			transition:
-				transform 0.3s ease,
-				top 0.3s ease;
-		}
-
-		/** バツ印（is-open時）- 中央ラインを非表示 */
-		aside.is-open .toc-hamburger__icon {
-			@apply bg-transparent;
-		}
-
-		/** バツ印 - 上ラインを-45度回転 */
-		aside.is-open .toc-hamburger__icon::before {
-			@apply -rotate-45 top-0;
-		}
-
-		/** バツ印 - 下ラインを45度回転 */
-		aside.is-open .toc-hamburger__icon::after {
-			@apply rotate-45 top-0;
-		}
-
-		/** TOCナビ（デフォルトで非表示） */
-		aside .toc {
-			@apply hidden bg-white border border-gray-200 border-t-0 p-4 w-[250px] overflow-y-auto;
-			max-height: calc(
-				100vh - var(--height-header) - var(--height-footer) - 2.5rem
-			);
-		}
-
-		/** TOCナビ（is-open時に表示） */
-		aside.is-open .toc {
-			@apply block;
-		}
-
-		/** モバイルメニュー用バックドロップ（is-open時に表示） */
-		aside.is-open::before {
-			content: '';
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background-color: rgba(0, 0, 0, 0.4);
-			z-index: -1;
+		.footer span {
+			@apply inline;
 		}
 	}
 }
