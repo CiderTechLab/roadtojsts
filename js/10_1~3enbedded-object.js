@@ -1,10 +1,9 @@
 export {};
-
 /**
  * 組み込みオブジェクト
  * - JavaScriptエンジンであらかじめ提供されているオブジェクト群のこと
- * - 以下、代表例を挙げていくが完璧に覚える必要はない。必要な時に知識を取り出せれば
- *   OK
+ * - 以下、代表例を挙げていくが完璧に覚える必要はない。
+ * - 必要な時に知識を取り出せればOK
  */
 /**
  * Windowオブジェクト
@@ -13,7 +12,6 @@ export {};
  * - ※ Node.js環境下ではglobalオブジェクトになる。
  */
 console.log('---windowオブジェクト---');
-
 function timeout() {
 	console.log('---example:setTimeout---');
 	global.setTimeout(() => {
@@ -49,8 +47,6 @@ interval();
  *   - now.toString()が働く
  *   - 例）Tue Mar 03 2026 11:03:18 GMT+0900 (日本標準時)
  * - 以上より、日付形式は明示的に指定したほうが安全だと思う。
- *
- * - Intl: 国際化（Internationalization）のための標準API
  */
 function dateObj() {
 	console.log('---Dateオブジェクト---');
@@ -92,6 +88,8 @@ function dateObj() {
 		`本日は${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日${now.toLocaleDateString('ja-JP', { weekday: 'long' })}です。`
 	);
 
+	// 今風の書き方
+	// Intl: 国際化（Internationalization）のための標準API
 	console.log(
 		new Intl.DateTimeFormat('ja-JP', {
 			year: 'numeric',
@@ -104,3 +102,15 @@ function dateObj() {
 	console.log(now.toISOString());
 }
 dateObj();
+
+/**
+ * RegExpオブジェクト
+ * - 正規表現を取り扱う時、使うオブジェクト。
+ */
+function regularExpression() {
+	console.log('---RegExpオブジェクト---');
+	const spNum = /(070|080|090)\-\d{4}-\d{4}/g;
+	console.log('070-5555-5555: ' + spNum.test('070-5555-5555'));
+	console.log('0120-555-555: ' + spNum.test('0120-555-555'));
+}
+regularExpression();

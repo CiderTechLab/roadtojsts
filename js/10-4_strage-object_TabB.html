@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<title>10-4_strage-object</title>
+	</head>
+	<body>
+		<p class="local-strage"></p>
+		<p class="session-strage"></p>
+		<script>
+			localStorage.setItem('fruit', 'Apple');
+			document.querySelector('.local-strage').textContent =
+				localStorage.getItem('fruit');
+
+			sessionStorage.setItem('color', 'blue');
+			document.querySelector('.session-strage').textContent =
+				sessionStorage.getItem('color');
+		</script>
+	</body>
+</html>
