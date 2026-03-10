@@ -109,8 +109,100 @@ console.log(menber);
 console.log(menber.reverse());
 
 /**
- * forEach
+ * forEachメソッド
  * - 配列の各要素を使って繰り返し処理を行う
  */
+console.log('---forEachメソッド---');
 const numbers = [1, 2, 3];
 numbers.forEach((value, index, array) => console.log(value, index, array));
+
+/**
+ * mapメソッド
+ * - コールバック関数の戻り値を要素に取る新しい配列を返す。
+ */
+console.log('---mapメソッド---');
+const mapArray = [1, 2, 3];
+function multiply3(val) {
+	return val * 3;
+}
+console.log(mapArray.map(multiply3));
+
+/**
+ * filterメソッド
+ * - コールバック関数の条件がtrueの時、trueの配列の要素のみを保持する新しい配列
+ * を作成。
+ */
+console.log('---filterメソッド---');
+const filterArray = [1, 2, 3];
+function greaterThan2(val) {
+	return val > 2;
+}
+console.log(filterArray.filter(greaterThan2));
+
+/**
+ * everyメソッド
+ * - すべての関数がコールバック関数で実装された条件でtrueになるかどうかチェッ
+ *   ク。
+ * - すべての条件一致でtrue、それ以外はfalse
+ */
+console.log('---everyメソッド---');
+const everyArray = [1, 2, 3];
+console.log(everyArray.every((value) => value > 0));
+console.log(everyArray.every((value, index) => index > 0));
+console.log(0 > 0);
+
+/**
+ * someメソッド
+ * - 少なくとも一つの関数がコールバック関数で実装された条件でtrueになるかどうか
+ * 　チェック。
+ * - 一つでも条件一致でtrue、それ以外はfalse
+ */
+console.log('---someメソッド---');
+const someArray = [1, 2, 3];
+console.log(someArray.some((value) => value > 0));
+console.log(someArray.some((value, index) => index > 0));
+console.log(0 > 0);
+
+/**
+ * findメソッド
+ * - コールバック関数の条件を満たした最初の値を返す。
+ */
+function findMethod() {
+	console.log('---findメソッド---');
+	const findArray = [1, 2, 3];
+
+	console.log(findArray.find((value) => value > 0));
+	console.log(findArray.find((value, index) => index > 0));
+}
+findMethod();
+
+/**
+ * sortメソッド
+ * - 要素の順番を並び替える
+ * - 昇順の場合、文字より数字が先に来る。
+ *  （数字は一旦文字列に変換されて並び替えされる）
+ */
+function sortMethod() {
+	console.log('---sortメソッド---');
+	const sortArray = ['c', 'd', 'a', 'b', 3, 1, 2];
+	console.log(sortArray.sort());
+}
+sortMethod();
+
+function numSort() {
+	console.log('--数字のソート--');
+	const numSortArray = [4, 9, 2, 5, 6];
+	console.log(numSortArray.sort((a, b) => a - b));
+}
+numSort();
+
+/**
+ * reduceメソッド
+ * - 配列をループして各要素の値から単一の出力値を生成
+ */
+console.log('---reduceメソッド---');
+function reduceMethod(totalVal, currentVal) {
+	return totalVal + currentVal;
+}
+const reduceArray = [1, 2, 3];
+console.log(reduceArray.reduce(reduceMethod));
