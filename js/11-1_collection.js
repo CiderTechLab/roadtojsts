@@ -206,3 +206,52 @@ function reduceMethod(totalVal, currentVal) {
 }
 const reduceArray = [1, 2, 3];
 console.log(reduceArray.reduce(reduceMethod));
+
+/**
+ * fromメソッド
+ * - Setなどの反復可能オブジェクトやargumentsなどの配列風オブジェクトから配列を
+ *   作成できる。
+ */
+function fromMethod() {
+	console.log('---fromメソッド---');
+	const setObj = new Set();
+	setObj.add('a');
+	setObj.add('b');
+	setObj.add('c');
+	console.log(Array.from(setObj));
+}
+fromMethod();
+
+/**
+ * isArrayオブジェクト
+ * - 配列かどうか判定
+ */
+function isArrayMethod() {
+	console.log('---isArrayメソッド---');
+	const arrayObj = new Set();
+	console.log(Array.isArray(arrayObj));
+
+	const convArray = Array.from(arrayObj);
+	console.log(Array.isArray(convArray));
+}
+isArrayMethod();
+
+/**
+ * destructure assignment（分割代入）
+ */
+function destructureAssignment() {
+	console.log('---分割代入---');
+
+	let arrayList = ['1', '2', '3', '4', '5'];
+
+	let [v, w, x, y, z] = arrayList;
+	console.log(v, w, x, y, z);
+
+	let [v1, , x1] = arrayList;
+	console.log(v1, x1);
+
+	let variable = 0;
+	[variable] = arrayList;
+	console.log(variable);
+}
+destructureAssignment();
