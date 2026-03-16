@@ -241,11 +241,67 @@ node [filename].js
 						<details>
 							<summary><h3 class="heading-three">制御構文</h3></summary>
 							<section class="section">
-								<ul>
-									<li>条件分岐：if, else if, else, switch</li>
-									<li>ループ：for, while, do...while, for...in, for...of</li>
-									<li>例外処理：try...catch...finally</li>
-								</ul>
+								<table class="table">
+									<thead class="thead">
+										<tr>
+											<th class="thead-js">制御の種類</th>
+											<th class="thead-js">構文</th>
+											<th class="thead-js">解説</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span aria-hidden="true">&#x1f500;</span>条件分岐</td>
+											<td>if([条件]) { }</td>
+											<td>条件が真のときにコードブロックを実行</td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f500;</span>条件分岐</td>
+											<td>if { } else if { } else { }</td>
+											<td>条件に応じて複数のコードブロックを実行</td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f500;</span>条件分岐</td>
+											<td>switch</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f504;</span>ループ</td>
+											<td>
+												for(let [変数名] = [開始数]; [変数名] &lt; [終了条件];
+												[変数名]++) { }
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f504;</span>ループ</td>
+											<td>while([条件]) { }</td>
+											<td>[条件]がfalseになるまで繰り返し実行する。</td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f504;</span>ループ</td>
+											<td>do { } while([条件])</td>
+											<td>
+												少なくとも1回はコードブロックを実行し、その後[条件]がtrueの間繰り返す。
+											</td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f504;</span>ループ</td>
+											<td>for...in</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x1f504;</span>ループ</td>
+											<td>for...of</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><span aria-hidden="true">&#x267e;</span>例外処理</td>
+											<td>try {...} catch {...} finally {...}</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
 							</section>
 						</details>
 
