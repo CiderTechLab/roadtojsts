@@ -60,7 +60,7 @@
 
 	/** ハンバーガーボタン - ヘッダーと同じ高さで左上固定 */
 	.toc-hamburger {
-		@apply flex items-center justify-center bg-transparent cursor-pointer fixed top-0 left-0;
+		@apply flex items-center justify-center bg-transparent cursor-pointer fixed top-0 left-0 pointer-events-auto;
 		width: 3rem;
 		height: var(--height-header);
 		border: none;
@@ -70,32 +70,25 @@
 	/** 3本線 */
 	.toc-hamburger__icon::before {
 		content: '';
-		@apply absolute left-0 block -top-2 origin-left;
-		width: 1.5rem;
-		height: 2px;
-		background-color: var(--color-border-primary);
+		@apply absolute left-0 block -top-2 origin-left w-5.5 h-[2px] bg-[var(--color-border-primary)];
 		transition:
-			transform 0.3s ease,
-			top 0.3s ease;
+			transform 0.4s ease,
+			top 0.4s ease;
 	}
 	.toc-hamburger__icon {
-		@apply relative block;
-		width: 1.5rem;
-		height: 2px;
-		background-color: var(--color-border-primary);
-		transition: background-color 0.3s ease;
+		@apply relative block w-5.5 h-[2px] bg-[var(--color-border-primary)] transition-colors duration-400;
 	}
 	.toc-hamburger__icon::after {
 		content: '';
-		@apply absolute left-0 block w-6 h-[2px] bg-gray-700 top-2 origin-left;
+		@apply absolute left-0 block w-5.5 h-[2px] bg-[var(--color-border-primary)] top-2 origin-left;
 		transition:
-			transform 0.3s ease,
-			top 0.3s ease;
+			transform 0.4s ease,
+			top 0.4s ease;
 	}
 
 	/** X印（is-open時） - 上ラインを45度回転 */
 	aside.is-open .toc-hamburger__icon::before {
-		transform: translateY(-50%) rotate(40deg);
+		transform: translateY(-50%) rotate(45deg);
 	}
 
 	/** X印（is-open時）- 中央ラインを非表示 */
@@ -105,12 +98,12 @@
 
 	/** X印（is-open時） - 下ラインを-45度回転 */
 	aside.is-open .toc-hamburger__icon::after {
-		transform: translateY(-50%) rotate(-40deg);
+		transform: translateY(-50%) rotate(-45deg);
 	}
 
 	/** TOCナビ（デフォルトで非表示） */
 	aside .toc {
-		@apply hidden bg-white border-gray-200 p-4 w-full overflow-y-auto;
+		@apply hidden bg-white border-gray-200 p-4 w-full;
 		height: 100vh;
 	}
 
@@ -156,17 +149,14 @@
 
 	/** summary */
 	summary {
-		cursor: pointer;
-		user-select: none;
-		list-style: none;
+		@apply block cursor-pointer select-none list-none;
 	}
 	summary::-webkit-details-marker {
 		display: none;
 	}
 	summary::before {
 		content: '▼';
-		display: inline-block;
-		transition: transform 0.2s ease;
+		@apply inline-block transition-transform duration-200;
 		color: var(--text-primary);
 	}
 

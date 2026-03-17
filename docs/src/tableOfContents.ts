@@ -58,7 +58,7 @@ function generateTableOfContentsHTML(headings: HeadingElement[]): string {
 	if (headings.length === 0) return '';
 
 	let html =
-		'<button class="toc-hamburger" aria-label="目次を開く" aria-expanded="false" style="position: static;">';
+		'<button class="toc-hamburger" aria-label="目次を開く" aria-expanded="false">';
 	html += '<span class="toc-hamburger__icon"></span>';
 	html += '</button>\n';
 

@@ -37,16 +37,22 @@
 		content: counter(h2-counter) '.' counter(h3-counter) ' ';
 	}
 
+	/** h4 */
+	.heading-four {
+		@apply text-xl m-4 p-2 border-l-[3px] border-gray-400;
+	}
+
 	p {
-		@apply ml-4;
+		@apply p-0 ml-4;
 	}
 
 	pre {
-		@apply bg-black text-white p-2 overflow-x-auto rounded-[0.5rem] my-[0.125rem];
+		@apply p-0 m-4;
 	}
 
 	code {
-		@apply p-0;
+		@apply bg-black text-white p-4 overflow-x-auto my-[0.125rem] shadow-md;
+		font-family: 'Courier New', Courier, monospace;
 	}
 
 	/** links */
@@ -63,6 +69,9 @@
 	}
 	.thead-js {
 		@apply bg-yellow-300;
+	}
+	.thead-ts {
+		@apply bg-blue-900 text-white border-black;
 	}
 	td {
 		@apply border p-2;

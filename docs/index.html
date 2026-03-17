@@ -31,52 +31,33 @@
 					<article class="article">
 						<h2 class="heading-two heading-two--about">About</h2>
 						<section class="section">
-							<h3 class="heading-three">
-								Road&nbsp;To&nbsp;JS&nbsp;&amp;&nbsp;TS（以下、当サイト）について
-							</h3>
-							<p>
-								当サイトは<a href="https://github.com/CiderTechLab">私（S.K）</a
-								>がJavaScriptとTypeScriptを学習しながら、得た知識や経験をまとめたサイトになります。
-							</p>
-							<h3 class="heading-three">当サイトの対象者</h3>
-							<ul>
-								<li class="list-disc">
-									JavaScriptやTypeScriptを学んでいるが、躓いているところがある方。
-								</li>
-								<li class="list-disc">チートシートが欲しい方。</li>
-							</ul>
-							<h3 class="heading-three">制作方法について</h3>
-							<p>
-								当サイトは<strong>GitHub Copilotと私でペアプログラミング</strong
-								>のような形で制作いたしました。また<strong
-									>Tailwind CSSも導入</strong
-								>し、効率化を図りました。
-							</p>
+							詳細は<a
+								href="https://github.com/CiderTechLab/roadtojsts/blob/main/README.md"
+								>README.md</a
+							>をご覧ください
 						</section>
 					</article>
 
 					<article class="article">
 						<h2 class="heading-two heading-two--js">JavaScript</h2>
 						<details>
-							<summary><h3 class="heading-three">歴史</h3></summary>
+							<summary><h3 class="heading-three">概要</h3></summary>
 							<section class="section">
 								<p>
-									JavaScript（JS）は当時のNetscape社の<a
+									JavaScript（以下、JS）は当時Netscape社の<a
 										href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
 										target="_blank"
 										>ブレンダン・アイク氏</a
-									>によって開発され、1995年に初めてのバージョンがリリースされました。当時は簡単な用途を想定されており、「ブラウザで動作するJava風のプログラミング言語作ってくれ。（意訳）」と上司に言われ、<strong>なんと10日で作成（!?）</strong>されたと言われています。（ちなみに、後にブレンダン・アイク氏はMozillaのCEOも経験し、現在ではなんとBraveブラウザの開発に携わっています。）
+									>によって開発され、1995年に初めてのバージョンがリリースされました。当時は簡単な用途を想定されており、「ブラウザで動作するJava風のプログラミング言語作ってくれ。（意訳）」と上司に言われ、<strong>なんと10日で作成</strong>されたと言われています。ちなみに、後にブレンダン・アイク氏はMozillaのCEOも経験し、現在では<strong>Braveブラウザの開発にも携わっています</strong>。
 								</p>
 							</section>
 						</details>
 						<details>
 							<summary><h3 class="heading-three">実行方法</h3></summary>
 							<section class="section">
-								<h4>Node.js上での実行</h4>
-								<p>以下のコマンドで実行できる。</p>
-								<pre><code>
-node [filename].js
-									</code></pre>
+								<h4 class="heading-four">Node.js上での実行</h4>
+								<p>以下のコマンドで実行することができます。</p>
+								<pre><code>node (folder)/[filename].js</code></pre>
 							</section>
 						</details>
 						<details>
@@ -127,7 +108,7 @@ node [filename].js
 								<h3 class="heading-three">変数、定数、データ型</h3>
 							</summary>
 							<section class="section">
-								<h4>変数、定数</h4>
+								<h4 class="heading-four">変数、定数</h4>
 								<table class="table">
 									<thead class="thead">
 										<tr>
@@ -171,7 +152,7 @@ node [filename].js
 									</tbody>
 								</table>
 
-								<h4>データ型</h4>
+								<h4 class="heading-four">データ型</h4>
 								<table class="table">
 									<thead class="thead">
 										<tr>
@@ -319,25 +300,39 @@ node [filename].js
 							<summary><h3 class="heading-three">歴史</h3></summary>
 							<section class="section">
 								<p>
-									TypeScript（TS）はMicrosoftによって開発され、2012年に初めてのバージョンがリリースされました。
+									TypeScript（以下、TS）はMicrosoftによって開発され、2012年に初めてのバージョンがリリースされました。
 								</p>
 							</section>
 						</details>
 						<details>
-							<summary><h3 class="heading-three">tsconfig.json</h3></summary>
+							<summary><h3 class="heading-three">コンパイル設定</h3></summary>
 							<section class="section">
-								<p>TypeScriptのコンパイル設定を記述するファイルです。</p>
-								<pre><code>
-{
-  "compilerOptions": {
-    "target": "es2015"
-  }
-}
-									</code></pre>
+								<h4 class="heading-four">tsconfig.json</h4>
 								<p>
-									上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
-									<strong>指定しないとデフォルトでES5になります。</strong>
+									<strong>tsconfig.json</strong
+									>は、TypeScriptのコンパイル設定を記述する重要なファイルです。以下、記述例です。
 								</p>
+								<pre><code>{"compilerOptions": {"target": "es2015"}}</code></pre>
+								<p>
+									通常、TSのコンパイルは設定しないと互換性維持のためデフォルトでES5にコンパイルされます。しかし、上記の記述例でコンパイル後のJSのバージョンをECMAScript2015（ES6）に設定することができます。
+								</p>
+								<h4 class="heading-four">設定一覧</h4>
+								<table>
+									<thead>
+										<tr>
+											<th class="thead-ts">設定名</th>
+											<th class="thead-ts">説明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>target</td>
+											<td>
+												コンパイル後のJavaScriptのバージョンを指定します。
+											</td>
+										</tr>
+									</tbody>
+								</table>
 								<p>"outDir": "dist",</p>
 								<p>
 									この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
@@ -349,189 +344,9 @@ node [filename].js
 								<h3 class="heading-three">TypeScriptの型一覧</h3>
 							</summary>
 							<section class="section">
-								<div class="overflow-x-auto m-4">
-									<table class="w-full border-collapse border border-cyan-400">
-										<thead
-											class="thead bg-gradient-to-r from-cyan-400 to-blue-900 text-white"
-										>
-											<tr>
-												<th class="border border-cyan-400 p-3 text-left">
-													型名
-												</th>
-												<th class="border border-cyan-400 p-3 text-left">
-													使用例
-												</th>
-												<th class="border border-cyan-400 p-3 text-left">
-													型の概要
-												</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>string</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let name: string = "Alice";</code>
-												</td>
-												<td class="border border-cyan-400 p-3">文字列型</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>number</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let age: number = 25;</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													数値型（整数、小数、Infinity、NaN）
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>boolean</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let isActive: boolean = true;</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													真偽値型（trueまたはfalse）
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>any</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let value: any = "anything";</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													任意の型。型チェックを無効化
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>unknown</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let value: unknown = "anything";</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													任意の型だが、使用前に型を絞る必要がある
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>void</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>function log(): void { }</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													値を返さない関数の戻り値型
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>null</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let value: null = null;</code>
-												</td>
-												<td class="border border-cyan-400 p-3">nullを表す型</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>undefined</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let value: undefined;</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													undefinedを表す型
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>never</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code
-														>function error(): never { throw Error(); }</code
-													>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													値を返さない（エラーまたは無限ループ）
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>object</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let obj: object = { };</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													オブジェクト型（プリミティブ以外）
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>Type[]</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let nums: number[] = [1, 2, 3];</code>
-												</td>
-												<td class="border border-cyan-400 p-3">配列型</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>Union</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let value: string | number;</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													複数の型のいずれか
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>Literal</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let direction: "up" | "down";</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													特定の値に限定する型
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>Tuple</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>let tuple: [string, number];</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													固定長の配列で要素ごとに型を指定
-												</td>
-											</tr>
-											<tr class="hover:bg-cyan-100">
-												<td class="border border-cyan-400 p-3">
-													<code>enum</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													<code>enum Color { Red, Green, Blue }</code>
-												</td>
-												<td class="border border-cyan-400 p-3">
-													名前付き定数の集合
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<h4>Q.ではTypeScriptで型宣言は必須なのか？</h4>
+								<p>編集中&#x1F4DD;&#x1F611;</p>
+								<!--
+								<h4 class="heading-four">Q.ではTypeScriptで型宣言は必須なのか？</h4>
 								<ul>
 									<li>
 										A.型推論により、必ずしも明示的な型宣言は必要ないです！（const
@@ -541,6 +356,7 @@ node [filename].js
 										ただし、関数の引数・戻り値、データベースでは明示的な型宣言が推奨されます。
 									</li>
 								</ul>
+							-->
 							</section>
 						</details>
 					</article>
@@ -548,19 +364,43 @@ node [filename].js
 					<article class="article">
 						<h2 class="heading-two heading-two--tw">Tailwind CSS</h2>
 						<details>
-							<summary><h3 class="heading-three">導入方法</h3></summary>
+							<summary><h3 class="heading-three">概要</h3></summary>
 							<section class="section">
-								<p>このページではTailwind CSSを試験的に導入しております。</p>
-								<pre><code>
-&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
-									</code></pre>
 								<p>
 									Tailwind
-									CSSを以下のコマンドでbuildし、buildしたファイルをhtml側で読み込みます。
+									CSSはOSSのCSSフレームワークです。特徴として<strong>ユーティリティファースト</strong>が挙げられます。他のCSSフレームワークは、ボタンやボックスなど既に定義済みのコンポーネントを使い制作していきますが、Tailwind
+									CSSはユーティリティークラスという特定のスタイルが設定されているクラスをHTML要素に組み合わせて適用することで、自由度が高く保守性が高いコーディングを実現しています。
 								</p>
-								<pre><code>
-npm run build
-									</code></pre>
+							</section>
+						</details>
+						<details>
+							<summary><h3 class="heading-three">導入方法</h3></summary>
+							<section class="section">
+								<p>
+									私は当初、<a href="https://tailwindcss.com/" target="_blank"
+										>Tailwind CSSの公式サイト</a
+									>を参考に以下のコードを&lt;head&gt;要素内に記述し、試験的に導入しておりました。
+								</p>
+								<pre><code>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code></pre>
+								<p>
+									その後<b
+										>「同じ要素に、毎回同じTailwind
+										CSSのクラスを記述するのは冗長だな」</b
+									>と感じ、npmを経由し本格導入することにしました。
+								</p>
+							</section>
+						</details>
+						<details>
+							<summary>
+								<h3 class="heading-three">ビルド～読み込み方法</h3>
+							</summary>
+							<section>
+								<p>
+									docs&gt;src&nbsp;内にあるTailwind
+									CSSの構文で制作したCSSファイルを以下のコマンドでbuildし、docsフォルダ内に生成します。
+								</p>
+								<pre><code>npm run build</code></pre>
+								<p>その後、生成したCSSファイルをhtml側で読み込みます。</p>
 							</section>
 						</details>
 					</article>
