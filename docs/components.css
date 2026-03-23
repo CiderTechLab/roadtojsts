@@ -21,8 +21,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -334,7 +332,7 @@
     display: block;
     height: 2px;
     width: calc(var(--spacing) * 5.5);
-    transform-origin: 0;
+    transform-origin: 100%;
     background-color: var(--color-border-primary);
     transition: transform 0.4s ease,
 			top 0.4s ease;
@@ -359,31 +357,39 @@
     display: block;
     height: 2px;
     width: calc(var(--spacing) * 5.5);
-    transform-origin: 0;
+    transform-origin: 100%;
     background-color: var(--color-border-primary);
     transition: transform 0.4s ease,
 			top 0.4s ease;
   }
   aside.is-open .toc-hamburger__icon::before {
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateY(50%) rotate(-45deg);
   }
   aside.is-open .toc-hamburger__icon {
     background-color: transparent;
   }
   aside.is-open .toc-hamburger__icon::after {
-    transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(50%) rotate(45deg);
   }
   aside .toc {
-    display: none;
+    display: block;
+    height: 100vh;
     width: 100%;
+    --tw-translate-x: 100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
     overflow-y: auto;
     border-color: var(--color-gray-200);
     background-color: var(--color-white);
     padding: calc(var(--spacing) * 4);
-    height: 100vh;
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
   }
   aside.is-open .toc {
-    display: block;
+    --tw-translate-x: calc(var(--spacing) * 0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   aside.is-open {
     pointer-events: auto;
@@ -469,7 +475,7 @@
     display: block;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   @layer components {
     .header {
       padding-left: calc(var(--spacing) * 4);
@@ -480,22 +486,24 @@
       gap: 0;
     }
     aside {
-      grid-column: 1;
-      order: 1;
+      pointer-events: auto;
       position: sticky;
+      order: 1;
+      grid-column: span 1 / span 1;
+      width: 250px;
+      overflow-y: auto;
+      border-right-style: var(--tw-border-style);
+      border-right-width: 1px;
+      border-color: var(--color-gray-200);
+      padding: calc(var(--spacing) * 5);
       top: var(--height-header);
       max-height: calc(100vh - var(--height-header) - var(--height-footer));
-      overflow-y: auto;
-      pointer-events: auto;
     }
     aside .toc {
       display: block;
-      overflow-y: visible;
-    }
-    aside {
-      width: 250px;
-      padding: 20px;
-      border-right: 1px solid #e5e7eb;
+      --tw-translate-x: calc(var(--spacing) * 0);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+      overflow: hidden;
     }
     .toc h2 {
       margin: 0 0 16px 0;
@@ -541,12 +549,30 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
       --tw-border-style: solid;
       --tw-duration: initial;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
     }
   }
 }

@@ -3,7 +3,12 @@
 @layer utilities {
 	/** h1 */
 	h1 {
-		@apply text-base lg:text-4xl font-bold;
+		@apply text-2xl font-bold;
+	}
+
+	/** line break */
+	.title-linebreak {
+		@apply block;
 	}
 
 	/** h2 */
@@ -92,5 +97,16 @@
 
 	.list-disc {
 		@apply ml-4 list-disc;
+	}
+
+	@media screen and (min-width: 1280px) {
+		/** h1 */
+		h1 {
+			@apply text-4xl font-bold;
+		}
+
+		.title-linebreak {
+			@apply hidden;
+		}
 	}
 }

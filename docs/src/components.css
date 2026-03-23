@@ -70,7 +70,7 @@
 	/** 3本線 */
 	.toc-hamburger__icon::before {
 		content: '';
-		@apply absolute left-0 block -top-2 origin-left w-5.5 h-[2px] bg-[var(--color-border-primary)];
+		@apply absolute left-0 block -top-2 origin-right w-5.5 h-[2px] bg-[var(--color-border-primary)];
 		transition:
 			transform 0.4s ease,
 			top 0.4s ease;
@@ -80,36 +80,35 @@
 	}
 	.toc-hamburger__icon::after {
 		content: '';
-		@apply absolute left-0 block w-5.5 h-[2px] bg-[var(--color-border-primary)] top-2 origin-left;
+		@apply absolute left-0 block top-2 origin-right w-5.5 h-[2px] bg-[var(--color-border-primary)];
 		transition:
 			transform 0.4s ease,
 			top 0.4s ease;
 	}
 
-	/** X印（is-open時） - 上ラインを45度回転 */
+	/** X印（is-open時） - 上線を下に45度回転 */
 	aside.is-open .toc-hamburger__icon::before {
-		transform: translateY(-50%) rotate(45deg);
+		transform: translateY(50%) rotate(-45deg);
 	}
 
-	/** X印（is-open時）- 中央ラインを非表示 */
+	/** X印（is-open時）- 中央線を非表示 */
 	aside.is-open .toc-hamburger__icon {
 		@apply bg-transparent;
 	}
 
-	/** X印（is-open時） - 下ラインを-45度回転 */
+	/** X印（is-open時） - 下線を上に45度回転 */
 	aside.is-open .toc-hamburger__icon::after {
-		transform: translateY(-50%) rotate(-45deg);
+		transform: translateY(50%) rotate(45deg);
 	}
 
 	/** TOCナビ（デフォルトで非表示） */
 	aside .toc {
-		@apply hidden bg-white border-gray-200 p-4 w-full overflow-y-auto;
-		height: 100vh;
+		@apply block bg-white border-gray-200 p-4 w-full overflow-y-auto h-screen translate-x-full transition-transform duration-500;
 	}
 
 	/** TOCナビ（is-open時に表示） */
 	aside.is-open .toc {
-		@apply block;
+		@apply translate-x-0;
 	}
 
 	/** メニュー開いている時はクリック可能にする */
@@ -180,7 +179,7 @@
 }
 
 /** PC Edition */
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
 	@layer components {
 		.header {
 			@apply pl-4;
@@ -193,23 +192,13 @@
 		}
 
 		aside {
-			grid-column: 1;
-			order: 1;
-			position: sticky;
+			@apply col-span-1 order-1 sticky overflow-y-auto pointer-events-auto w-[250px] p-5 border-r border-gray-200;
 			top: var(--height-header);
 			max-height: calc(100vh - var(--height-header) - var(--height-footer));
-			overflow-y: auto;
-			@apply pointer-events-auto;
 		}
 
 		aside .toc {
-			@apply block overflow-y-visible;
-		}
-
-		aside {
-			width: 250px;
-			padding: 20px;
-			border-right: 1px solid #e5e7eb;
+			@apply block overflow-hidden translate-x-0;
 		}
 
 		.toc h2 {
