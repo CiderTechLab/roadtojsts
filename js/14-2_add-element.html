@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>要素の追加</title>
+	</head>
+	<body>
+		<div id="greeting">
+			<span>Hello, DOM world!</span>
+		</div>
+
+		<hr />
+
+		<div class="comment">
+			<span>3秒後、このエリアは要素ごと置き換わります。</span>
+		</div>
+
+		<hr />
+
+		<script>
+			const greetElement = document.querySelector('#greeting');
+			console.log(greetElement.innerHTML); // <span>Hello, DOM world!</span>
+			setTimeout(() => {
+				greetElement.innerHTML = '<h1>こんにちは、DOMの世界！</h1>';
+			}, 3000);
+
+			const commentElement = document.querySelector('.comment');
+			console.log(commentElement.textContent); // 3秒後、このエリアは要素ごと置き換わります。
+			setTimeout(() => {
+				commentElement.textContent =
+					'<p>どうでしょうか？HTMLタグごと表示されてますよね？</p>';
+			}, 3000);
+
+			const createDiv = document.createElement('div');
+			setTimeout(() => {
+				createDiv.textContent = 'createElementで作成した要素です。';
+				document.body.appendChild(createDiv);
+			}, 3000);
+		</script>
+	</body>
+</html>

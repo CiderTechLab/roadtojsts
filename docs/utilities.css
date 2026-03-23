@@ -265,37 +265,37 @@
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
-  .heading-two {
+  h2.heading-two {
     counter-reset: h3-counter;
     counter-increment: h2-counter;
     margin: calc(var(--spacing) * 4);
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
-  .heading-two::before {
+  h2.heading-two::before {
     content: counter(h2-counter) '. ';
   }
-  .heading-two--about {
+  h2.heading-two--about {
     background-color: var(--color-gray-500);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  .heading-two--js {
+  h2.heading-two--js {
     background-color: var(--color-yellow-300);
     padding: calc(var(--spacing) * 4);
     color: var(--color-black);
   }
-  .heading-two--ts {
+  h2.heading-two--ts {
     background-color: var(--color-blue-900);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  .heading-two--tw {
+  h2.heading-two--tw {
     background-color: var(--color-cyan-500);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  .heading-three {
+  h3.heading-three {
     counter-increment: h3-counter;
     margin: calc(var(--spacing) * 4);
     border-bottom-style: var(--tw-border-style);
@@ -304,7 +304,7 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  .heading-three::before {
+  h3.heading-three::before {
     content: counter(h2-counter) '.' counter(h3-counter) ' ';
   }
   .heading-four {

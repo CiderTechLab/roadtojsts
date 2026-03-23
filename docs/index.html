@@ -111,9 +111,9 @@
 								<ul>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01_variable_naming-convention.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-1_variable_naming-convension.js"
 											target="_blank"
-											>01_variable_naming-convention.js</a
+											>01-1_variable_naming-convension.js</a
 										>
 									</li>
 								</ul>
@@ -172,9 +172,9 @@
 								<ul>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01-1_variable_naming-convention.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-1_variable_naming-convension.js"
 											target="_blank"
-											>01-1_variable_naming-convention.js</a
+											>01-1_variable_naming-convension.js</a
 										>
 									</li>
 								</ul>
@@ -247,28 +247,28 @@
 								<ul>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01-2_type.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-2_type.js"
 											target="_blank"
 											>01-2_type.js</a
 										>
 									</li>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01-3_primitive-types.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-3_primitive-types.js"
 											target="_blank"
 											>01-3_primitive-types.js</a
 										>
 									</li>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01-4_object-types.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-4_object-types.js"
 											target="_blank"
 											>01-4_object-types.js</a
 										>
 									</li>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/01-5_dynamic-types.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/01-5_dynamic-types.js"
 											target="_blank"
 											>01-5_dynamic-types.js</a
 										>
@@ -423,7 +423,7 @@
 								<ul>
 									<li>
 										<a
-											href="https://github.com/CiderTechLab/roadtojsts/blob/main/js/02_operators-operands.js"
+											href="https://github.com/CiderTechLab/jstsnotes/blob/main/js/02_operators-operands.js"
 											target="_blank"
 											>02_operators-operands.js</a
 										>
@@ -530,10 +530,60 @@
 
 						<details>
 							<summary>
-								<h3 class="heading-three">Document Object Model (DOM)</h3>
+								<h3 class="heading-three">Document Object Model (DOM) API</h3>
 							</summary>
 							<section class="section">
 								<p>編集中&#x1F4DD;&#x1F611;</p>
+								<h4 class="heading-four">HTML要素を取得する</h4>
+								<p>getElementById以外<b>getElements</b>と複数形になっているので注意してください。</p>
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="thead-js">メソッド</th>
+											<th class="thead-js">説明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>document.getElementById([id名])</td>
+											<td>指定したIDを持つ要素を取得する。</td>
+										</tr>
+										<tr>
+											<td>document.getElementsByClassName([class名])</td>
+											<td>指定したクラス名を持つ要素のHTMLCollectionを取得する。</td>
+										</tr>
+										<tr>
+											<td>document.getElementsByTagName([タグ名])</td>
+											<td>指定したタグ名を持つ要素のHTMLCollectionを取得する。</td>
+										</tr>
+										<tr>
+											<td>document.getElementsByName([name属性])</td>
+											<td>指定したname属性を持つ要素のNodeListを取得する。</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<p>現在は一般的に以下のAPIを使う事が推奨されています。ただし、パフォーマンスの関係でElementを取得するメソッドを使うことがあります。</p>
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="thead-js">メソッド</th>
+											<th class="thead-js">説明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>document.querySelector([要素名][#id名][.class名])</td>
+											<td>指定したセレクタに一致する最初の要素を取得する。</td>
+										</tr>
+										<tr>
+											<td>document.querySelectorAll([要素名][#id名][.class名])</td>
+											<td>指定したセレクタに一致するすべての要素のNodeListを取得する。</td>
+										</tr>
+									</tbody>
+								</table>
+								<h4 class="heading-four">HTML要素を置き換える</h4>
+								<h4 class="heading-four">HTML要素を追加する</h4>
 							</section>
 						</details>
 
@@ -589,7 +639,7 @@
 									通常、TSのコンパイルは設定しないと互換性維持のためデフォルトでES5にコンパイルされます。しかし、上記の記述例でコンパイル後のJSのバージョンをECMAScript2015（ES6）に設定することができます。
 								</p>
 								<h4 class="heading-four">設定一覧</h4>
-								<table>
+								<table class="table">
 									<thead>
 										<tr>
 											<th class="thead-ts">設定名</th>

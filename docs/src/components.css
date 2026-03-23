@@ -60,7 +60,7 @@
 
 	/** ハンバーガーボタン - ヘッダーと同じ高さで左上固定 */
 	.toc-hamburger {
-		@apply flex items-center justify-center bg-transparent cursor-pointer fixed top-0 left-0 pointer-events-auto;
+		@apply flex items-center justify-center bg-transparent cursor-pointer fixed top-0 right-0 pointer-events-auto;
 		width: 3rem;
 		height: var(--height-header);
 		border: none;
@@ -214,7 +214,7 @@
 
 		.toc h2 {
 			margin: 0 0 16px 0;
-			font-size: 18px;
+			font-size: 1rem;
 		}
 
 		.toc-list {

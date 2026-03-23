@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<!-- コメント -->
+		<h1>heading one</h1>
+		<p>paragraph</p>
+
+		<script>
+			/**
+			 * Documentオブジェクト
+			 * - HTML構造がDOMオブジェクトに変換された状態で格納されている。
+			 * - 構造はツリー構造。（DOMツリー）
+			 */
+			console.dir(document.children);
+			console.dir(document.children[0].children);
+			console.dir(document.childNodes);
+
+			/**
+			 * Elementを取得するためのDOMインターフェース
+			 * - getElementById()：id属性を指定して要素を取得
+			 * - getElementsByClassName()：class属性を指定して要素を取得
+			 * - getElementsByName()：name属性を指定して要素を取得
+			 * - getElementsByTagName()：タグ名を指定して要素を取得
+			 *
+			 * - getElementByID()以外は**Elements**なので注意！
+			 */
+
+			/**
+			 * セレクタAPI
+			 * - 現在はこちらで要素を取得することが主流。
+			 * - ただし、例外としてパフォーマンスを重視する場合、DOMインターフェースを使
+			 *   うこともある。
+			 *
+			 * - querySelector()：セレクタを指定して最初の要素を取得
+			 * - querySelectorAll()：セレクタを指定してすべての要素を取得
+			 * - 主なElementの指定方法
+			 *   - 全てのタグ名: *
+			 *   - タグ名      : tag
+			 *   - id          : #id
+			 *   - class       : .class
+			 *   - 属性        : [属性名]
+			 */
+		</script>
+	</body>
+</html>
