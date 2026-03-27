@@ -266,46 +266,43 @@
   .title-linebreak {
     display: block;
   }
-  h2.heading-two {
+  .heading-two {
     counter-reset: h3-counter;
     counter-increment: h2-counter;
     margin: calc(var(--spacing) * 4);
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
-  h2.heading-two::before {
+  .heading-two::before {
     content: counter(h2-counter) '. ';
   }
-  h2.heading-two--about {
+  .heading-two--about {
     background-color: var(--color-gray-500);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  h2.heading-two--js {
+  .heading-two--js {
     background-color: var(--color-yellow-300);
     padding: calc(var(--spacing) * 4);
     color: var(--color-black);
   }
-  h2.heading-two--ts {
+  .heading-two--ts {
     background-color: var(--color-blue-900);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  h2.heading-two--tw {
+  .heading-two--tw {
     background-color: var(--color-cyan-500);
     padding: calc(var(--spacing) * 4);
     color: var(--color-white);
   }
-  h3.heading-three {
+  .heading-three {
     counter-increment: h3-counter;
     margin: calc(var(--spacing) * 4);
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-    border-color: var(--color-gray-300);
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  h3.heading-three::before {
+  .heading-three::before {
     content: counter(h2-counter) '.' counter(h3-counter) ' ';
   }
   .heading-four {
@@ -334,6 +331,7 @@
     margin-block: 0.125rem;
     overflow-x: auto;
     background-color: var(--color-black);
+    padding: calc(var(--spacing) * 2);
     color: var(--color-white);
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);

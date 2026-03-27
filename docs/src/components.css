@@ -148,19 +148,19 @@
 
 	/** summary */
 	summary {
-		@apply block cursor-pointer select-none list-none;
+		@apply flex items-center cursor-pointer select-none list-none border-b border-gray-300 mt-2 mr-2 mb-2 ml-4;
 	}
 	summary::-webkit-details-marker {
 		display: none;
 	}
 	summary::before {
-		content: '▼';
+		content: '∨';
 		@apply inline-block transition-transform duration-200;
 		color: var(--text-primary);
 	}
 
 	details[open] > summary::before {
-		transform: rotate(-90deg);
+		transform: rotate(-180deg);
 	}
 
 	/** footer */
