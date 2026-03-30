@@ -3,11 +3,8 @@
 		"target": "es2015",
 		"module": "es2015",
 		"moduleDetection": "force",
-		"moduleResolution": "node"
-	},
-	"include": [],
-	"references": [
-		{ "path": "./tsconfig.docs.json" },
-		{ "path": "./tsconfig.ts.json" }
-	]
+		"moduleResolution": "bundler",
+		"outDir": "ts/dist",
+		"rootDir": "ts/src"
+	}
 }

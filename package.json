@@ -6,11 +6,12 @@
 		"postcss-cli": "^11.0.1",
 		"postcss-import": "^16.1.1",
 		"tailwindcss": "^4.1.18",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.2"
 	},
 	"scripts": {
-		"build": "postcss docs/src/*.css -d docs/",
-		"build:ts": "tsc -b"
+		"build:css": "postcss docs/src/*.css -d docs/",
+		"build:ts": "tsc",
+		"build": "npm run build:ts && npm run build:css"
 	},
 	"name": "roadtotypescript",
 	"version": "1.0.0",

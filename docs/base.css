@@ -250,15 +250,22 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
 }
 @layer base {
   body {
     color: var(--text-primary);
+  }
+  .color--js {
+    background-color: var(--color-yellow-300);
+    color: var(--color-black);
+  }
+  .color--ts {
+    background-color: var(--color-blue-900);
+    color: var(--color-white);
+  }
+  .color--tw {
+    background-color: var(--color-cyan-500);
+    color: var(--color-white);
   }
 }
 @property --tw-border-style {

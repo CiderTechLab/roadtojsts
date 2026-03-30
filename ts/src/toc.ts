@@ -104,7 +104,7 @@ function generateTableOfContentsHTML(headings: HeadingElement[]): string {
 /**
  * 目次を<aside>に挿入する
  */
-function insertTableOfContents(): void {
+function insertToc(): void {
 	const aside = document.querySelector('aside');
 	if (!aside) return;
 
@@ -146,7 +146,7 @@ function insertTableOfContents(): void {
  * DOM読み込み完了時に目次を生成
  */
 if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', insertTableOfContents);
+	document.addEventListener('DOMContentLoaded', insertToc);
 } else {
-	insertTableOfContents();
+	insertToc();
 }

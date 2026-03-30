@@ -13,7 +13,7 @@
 		<!-- style info -->
 		<link rel="stylesheet" href="index.css" />
 		<!-- script info -->
-		<script type="module" src="tableOfContents.js" defer></script>
+		<script type="module" src="toc.js" defer></script>
 	</head>
 	<body>
 		<div class="layout">
@@ -31,7 +31,7 @@
 
 				<main class="main">
 					<article class="article">
-						<h2 class="heading-two heading-two--about">About</h2>
+						<h2 class="heading-two">About</h2>
 						<section class="section">
 							詳細は<a
 								href="https://github.com/CiderTechLab/roadtojsts/blob/main/README.md"
@@ -41,16 +41,49 @@
 					</article>
 
 					<article class="article">
-						<h2 class="heading-two heading-two--js">JavaScript</h2>
+						<h2 class="heading-two">
+							JavaScript/TypeScript CheetSheet
+						</h2>
 						<details>
 							<summary><h3 class="heading-three">概要</h3></summary>
 							<section class="section">
+								<h4 class="heading-four heading-four--js">JavaScriptの歴史</h4>
 								<p>
-									JavaScript（以下、JS）は当時Netscape社の<a
+									1995年、JavaScript（以下、JS）は当時Netscape社の<a
 										href="https://ja.wikipedia.org/wiki/ブレンダン・アイク"
 										target="_blank"
-										>ブレンダン・アイク氏</a
-									>によって開発され、1995年に初めてのバージョンがリリースされました。当時は簡単な用途を想定されており、「ブラウザで動作するJava風のプログラミング言語作ってくれ。（意訳）」と上司に言われ、<strong>なんと10日で作成</strong>されたと言われています。ちなみに、後にブレンダン・アイク氏はMozillaのCEOも経験し、現在では<strong>Braveブラウザの開発にも携わっています</strong>。
+										>Brendan Eich（ブレンダン・アイク）氏</a
+									>によって開発され、初めてのバージョンがリリースされました。当時は簡単な用途を想定されており、「ブラウザで動作するJava風のプログラミング言語作ってくれ。（意訳）」と上司に言われ、<strong>なんと10日で作成</strong>されたと言われています。ちなみに、後にBrendan
+									Eich氏はMozillaのCEOも経験し、現在では<strong>Braveブラウザの開発にも携わっています</strong>。
+								</p>
+								<h4 class="heading-four heading-four--js">JavaScriptの弱点</h4>
+								<ul>
+									<li>
+										型安全性の欠如：動的型付け言語のため、変数の型不一致によるバグが発生しやすい。
+									</li>
+									<li>
+										大規模プロジェクトでの保守性の低さ：型安全の欠如や、例えばJSDocで型を注釈できるものの、人の手で書くため信頼性や保守性が低い。
+									</li>
+									<li>
+										モジュールシステムの不備：JavaScriptの標準モジュールシステムは不十分であり、依存関係の管理が難しい。
+									</li>
+									<li>
+										クラスベースのオブジェクト指向プログラミングのサポート不足
+									</li>
+								</ul>
+								<h4 class="heading-four heading-four--ts">TypeScriptの歴史</h4>
+								<p>
+									2010年、Microsoftが開発を開始しました。主導は<a
+										href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%90%E3%83%BC%E3%82%B0"
+										target="_blank"
+										>Anders Hejlsberg（アンダース・ヘイルスバーグ）氏</a
+									>で.NET FrameworkやC#言語の開発者としても知られています。
+									2012年、初めてのバージョンがリリースされ、オープンソース化されました。
+								</p>
+								<h4 class="heading-four heading-four--ts">TypeScriptの特徴</h4>
+								<p>
+									<strong>型安全の強制</strong
+									>：逆に言うと、それ以外はどのような設計でも良いし、それぞれのフレームワークやライブラリに依存する形になる。
 								</p>
 							</section>
 						</details>
@@ -58,7 +91,8 @@
 						<details>
 							<summary><h3 class="heading-three">実行方法</h3></summary>
 							<section class="section">
-								<h4 class="heading-four">HTMLから読み込む</h4>
+								<h4 class="heading-four heading-four--js">JavaScriptの実行方法</h4>
+								<h5 class="heading-five">HTMLから読み込む</h5>
 								<p>以下のタグで読み込むことができます。</p>
 
 								<code>&lt;script src="[ファイル名].js"&gt;&lt;/script&gt;</code>
@@ -85,52 +119,62 @@
 								<p>
 									違いが分かりますか？defer属性を付けることで、スクリプトはDOMツリーの構築が完了した後に実行されるようになります。
 								</p>
-								<h4 class="heading-four">Node.js上での実行</h4>
+								<h5 class="heading-five">Node.js上での実行</h5>
 								<p>以下のコマンドで実行することができます。</p>
 								<code>node&nbsp;[ファイル名].js</code>
+
+								<h4 class="heading-four heading-four--ts">TypeScriptの実行方法</h4>
+								<h5 class="heading-five">TypeScriptのコンパイル</h5>
+								<p>
+									TypeScriptはJavaScriptのスーパーセットであり、JavaScriptにクロスコンパイルする必要があります。以下のコマンドでTypeScriptコードをJavaScriptコードに変換します。
+									<code>tsc&nbsp;[ファイル名].ts</code>
+								</p>
+								<h5 class="heading-five">コンパイル後の実行</h5>
+								<p>
+									コンパイル後はJavaScriptコードになるため、全項で説明したJavaScriptコードの実行方法で実行することができます。
+								</p>
 							</section>
 						</details>
 
 						<details>
-							<summary><h3 class="heading-three">命名規則</h3></summary>
+							<summary>
+								<h3 class="heading-three">命名規則（JavaScript/TypeScript）</h3>
+							</summary>
 							<section class="section">
 								<table class="table">
 									<caption>
-										命名規則一覧
+										命名規則一覧表
 									</caption>
 									<thead class="thead">
 										<tr>
-											<th class="thead-js">命名規則</th>
-											<th class="thead-js">読み方</th>
-											<th class="thead-js">例</th>
-											<th class="thead-js">用途</th>
+											<th class="thead-js-ts">命名規則</th>
+											<th class="thead-js-ts">例</th>
+											<th class="thead-js-ts">用途</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>camelCase</td>
-											<td>キャメルケース</td>
 											<td>myVariable, userName</td>
-											<td>変数で使われる</td>
+											<td>変数</td>
 										</tr>
 										<tr>
 											<td>PascalCase</td>
-											<td>パスカルケース</td>
 											<td>MyClass, User</td>
-											<td>クラス名、コンストラクタ関数で使われる</td>
+											<td>クラス名、コンストラクタ関数</td>
 										</tr>
 										<tr>
 											<td>snake_case</td>
-											<td>スネークケース</td>
 											<td>my_variable, user_name</td>
-											<td>変数や関数で使われる（キャメルよりは頻度少）</td>
+											<td>変数、関数（キャメルケースより頻度少）</td>
 										</tr>
 										<tr>
 											<td>kebab-case</td>
-											<td>ケバブケース</td>
 											<td>can-not-use</td>
 											<td>
-												JavaScriptでは変数や関数で使えないこともあり、あまり使われない。
+												JavaScript/TypeScriptでは変数や関数で使えないこともあり、あまり使われない。<strong
+													>ただし、CSSのクラス名、IDで使用されるのでJavaScript/TypeScriptと区別しやすい</strong
+												>
 											</td>
 										</tr>
 									</tbody>
@@ -150,12 +194,14 @@
 
 						<details>
 							<summary>
-								<h3 class="heading-three">変数、定数、データ型</h3>
+								<h3 class="heading-three">
+									変数、定数、データ型（JavaScript/TypeScript）
+								</h3>
 							</summary>
 							<section class="section">
 								<table class="table">
 									<caption>
-										変数・定数宣言の種類
+										変数・定数宣言の種類一覧表
 									</caption>
 									<thead class="thead">
 										<tr>
@@ -170,7 +216,7 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><code>const</code></td>
+											<td>const</td>
 											<td>必須</td>
 											<td>&#215;</td>
 											<td>&#215;</td>
@@ -179,7 +225,7 @@
 											<td><strong>最優先で使うべき。</strong></td>
 										</tr>
 										<tr>
-											<td><code>let</code></td>
+											<td>let</td>
 											<td>undefined（→実質必須な事が多い）</td>
 											<td>&#215;</td>
 											<td>&#9675;</td>
@@ -188,7 +234,7 @@
 											<td>constの次に使用するべき。</td>
 										</tr>
 										<tr>
-											<td><code>var</code></td>
+											<td>var</td>
 											<td>undefined</td>
 											<td>&#9675;</td>
 											<td>&#9675;</td>
@@ -210,11 +256,12 @@
 								</ul>
 								<h4 class="heading-four">データ型</h4>
 								<table class="table">
+									<caption>データ型一覧表</caption>
 									<thead class="thead">
 										<tr>
-											<th class="thead-js">データ型</th>
-											<th class="thead-js">型</th>
-											<th class="thead-js">値</th>
+											<th class="thead-js-ts">データ型</th>
+											<th class="thead-js-ts">型の種類</th>
+											<th class="thead-js-ts">値</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -273,6 +320,71 @@
 										</tr>
 									</tbody>
 								</table>
+								<table class="table">
+									<caption>TypeScript固有のデータ型一覧表</caption>
+									<thead class="thead">
+										<tr>
+											<th class="thead-ts">データ型</th>
+											<th class="thead-ts">型の種類</th>
+											<th class="thead-ts">構文</th>
+											<th class="thead-ts">使用例</th>
+											<th class="thead-ts">説明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>any</td>
+											<td>特殊型</td>
+											<td>[変数宣言][変数名]: any</td>
+											<td><code>let valName: any</code></td>
+											<td>任意の型の値を許容する。しかし、型安全性が失われるため<strong>非推奨。</strong></td>
+										</tr>
+										<tr>
+											<td>union</td>
+											<td>特殊型</td>
+											<td>[変数宣言][変数名]:[型1] | [型2] | ...</td>
+											<td><code>let valName: string | number</code></td>
+											<td>
+												複数の型を組み合わせた型。使用例は、値がstring型またはnumber型のいづれかであることを意味する。使えるプロパティは指定した複数の型の両方で使えるものに限られます。たとえばstring | numberの場合.toString()は両方使えますが.toUpperCase()は使えません。（number型で使えないため。）
+											</td>
+										</tr>
+										<tr>
+											<td>リテラル</td>
+											<td>特殊型</td>
+											<td>[変数宣言][変数名]: [リテラル値]</td>
+											<td><code>let valName: "hello"</code></td>
+											<td>特定の値のみを許容する型。リテラル型を使用することで、変数が特定の値のみを持つことを保証できる。</td>
+										</tr>
+									</tbody>
+								</table>
+								<h4 class="heading-four">TypeScript固有の機能</h4>
+								<h5 class="heading-five">型の明示的な宣言</h5>
+								<p>
+									TypeScriptで型宣言は必須なのか、と言われると<strong>型推論機能により必ずしも明示的な型宣言は必要ない。</strong>ただし、関数の引数・戻り値、データベースでは安全のために明示的な型宣言が推奨される。
+								</p>
+								<h5 class="heading-five">型チェック機能</h5>
+								<p>
+									IDEでの注釈、型推論機能、typeof演算子を使用することで変数、関数の型をチェックすることが出来る。
+								</p>
+								<h5 class="heading-five">割り当て可能性（assignability）</h5>
+								<p>
+									ある型の値が別の型の変数に割り当て可能かどうかを判断するルール。（例：サブタイプ関係、構造的部分型）
+								</p>
+								<h5 class="heading-five">型アノテーション（※非推奨）</h5>
+								<p>
+									変数で初期化時、型が推論されない変数は<strong
+										>進化するany（evolving any）</strong
+									>となる。しかし、any型を明示的に指定することは非推奨。なぜなら、型安全性が失われ、TypeScriptの利点が活かせなくなるため。
+								</p>
+								<h5 class="heading-five">型の絞り込み</h5>
+								<p>
+									ある値が定義された型や、宣言された型、以前に推論された型よりも限定的な型であることをコードで示すことです。型の絞り込みで利用できる論理チェックを<strong>型ガード（type guard）</strong>と呼びます。	
+								</p>
+								<h5 class="heading-five">型の割り当てによる絞り込み</h5>
+								<p>変数に直接値を割り当てると、変数を割り当てられた値の型に限定します。</p>
+								<h5 class="heading-five">型のif文による確認</h5>
+								<p></p>
+								<h5 class="heading-five">型のtypeof演算子による確認</h5>
 								<h4 class="heading-four">サンプルコード</h4>
 								<ul>
 									<li>
@@ -315,9 +427,9 @@
 								<h4 class="heading-four">算術演算子</h4>
 								<table class="table">
 									<caption>
-										算術演算子一覧
+										算術演算子一覧表
 									</caption>
-									<thead>
+									<thead class="thead">
 										<tr>
 											<th class="thead-js">演算子</th>
 											<th class="thead-js">意味</th>
@@ -361,9 +473,9 @@
 								</p>
 								<table class="table">
 									<caption>
-										等価演算子一覧
+										等価演算子一覧表
 									</caption>
-									<thead>
+									<thead class="thead">
 										<tr>
 											<th class="thead-js">演算子</th>
 											<th class="thead-js">意味</th>
@@ -410,9 +522,9 @@
 								</p>
 								<table class="table">
 									<caption>
-										関係演算子一覧
+										関係演算子一覧表
 									</caption>
-									<thead>
+									<thead class="thead">
 										<tr>
 											<th class="thead-js">演算子</th>
 											<th class="thead-js">意味</th>
@@ -454,9 +566,9 @@
 								</p>
 								<table class="table">
 									<caption>
-										論理演算子一覧
+										論理演算子一覧表
 									</caption>
-									<thead>
+									<thead class="thead">
 										<tr>
 											<th class="thead-js">演算子</th>
 											<th class="thead-js">意味</th>
@@ -510,7 +622,7 @@
 							<section class="section">
 								<table class="table">
 									<caption>
-										制御構文一覧
+										制御構文一覧表
 									</caption>
 									<thead class="thead">
 										<tr>
@@ -583,7 +695,7 @@
 								<h4 class="heading-four">Array（配列）</h4>
 								<table class="table">
 									<caption>
-										コレクション一覧
+										コレクション一覧表
 									</caption>
 									<thead>
 										<tr>
@@ -610,7 +722,7 @@
 								<h4 class="heading-four">Array（配列）のメソッド</h4>
 								<table class="table">
 									<caption>
-										Array（配列）のメソッド一覧
+										Array（配列）のメソッド一覧表
 									</caption>
 									<thead>
 										<tr>
@@ -670,7 +782,7 @@
 							<section class="section">
 								<table>
 									<caption>
-										関数の定義方法一覧
+										関数の定義方法一覧表
 									</caption>
 									<thead>
 										<tr>
@@ -842,6 +954,10 @@
 								<h4 class="heading-four">特徴</h4>
 								<ul>
 									<li>モジュールはファイル単位で定義される。</li>
+									<li>モジュール以外のファイルは全てスクリプトとなる。</li>
+									<li>
+										モジュール化すると、名前の競合（グローバルスコープ汚染）を避けつつ、コードを分割して管理できる。
+									</li>
 									<li>
 										モジュールはデフォルトでStrictモードで実行される。<strong
 											>そのため、DOMツリー構築後にモジュールが実行される。</strong
@@ -853,6 +969,10 @@
 										>
 									</li>
 								</ul>
+								<h4 class="heading-four">TypeScript固有の話</h4>
+								<p>
+									TypeScriptで<code>export{}</code>を書くと、コンパイル後のJavaScriptコードではexport文の位置が異なる場合がある。これはJavaScriptではexport文はどこに書かれても、実行順が変わらないため。
+								</p>
 								<h4 class="heading-four">エクスポート</h4>
 
 								<h4 class="heading-four">インポート</h4>
@@ -863,11 +983,12 @@
 										読み込み時点でモジュールのトップレベルのコードが実行される。
 									</li>
 								</ul>
-								<table>
+
+								<table class="table">
 									<thead>
 										<tr>
-											<th class="thead-js">説明</th>
-											<th class="thead-js">構文</th>
+											<th class="thead-js-ts">説明</th>
+											<th class="thead-js-ts">構文</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -944,11 +1065,11 @@
 									<li>ES2020以降でサポートされている比較的新しい機能。</li>
 									<li>必要な時に他のモジュールを読み込むことができる。</li>
 								</ul>
-								<table>
+								<table class="table">
 									<thead>
 										<tr>
-											<th class="thead-js">説明</th>
-											<th class="thead-js">構文</th>
+											<th class="thead-js-ts">説明</th>
+											<th class="thead-js-ts">構文</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -1063,68 +1184,155 @@
 
 					<article class="article">
 						<h2 class="heading-two heading-two--ts">TypeScript</h2>
-						<details>
-							<summary><h3 class="heading-three">歴史</h3></summary>
-							<section class="section">
-								<p>
-									TypeScript（以下、TS）はMicrosoftによって開発され、2012年に初めてのバージョンがリリースされました。
-								</p>
-							</section>
-						</details>
+
 						<details>
 							<summary><h3 class="heading-three">コンパイル設定</h3></summary>
+							<table class="table">
+								<caption>
+									tsconfig.jsonの設定一覧表
+								</caption>
+								<thead>
+									<tr>
+										<th class="thead-ts">設定名</th>
+										<th class="thead-ts">プロパティ</th>
+										<th class="thead-ts">説明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>compilerOptions</td>
+										<td></td>
+										<td>
+											TypeScriptのコンパイルオプションを指定するためのプロパティ。
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>target</td>
+										<td>
+											コンパイル後のJavaScriptのバージョンを指定するためのプロパティです。。
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>include</td>
+										<td>
+											コンパイル対象のファイルやディレクトリを指定するためのプロパティ。
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>exclude</td>
+										<td>
+											コンパイルから除外するファイルやディレクトリを指定するためのプロパティ。
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>files</td>
+										<td>
+											コンパイル対象のファイルを明示的に指定するためのプロパティ。
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>declaration</td>
+										<td>
+											型定義ファイル（.d.ts）を生成するかどうかを指定するプロパティです。デフォルトはtrue（生成する）です。falseに設定すると生成されません。
+										</td>
+									</tr>
+									<tr>
+										<td>references</td>
+										<td></td>
+										<td>他のプロジェクトへの参照を定義する。</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>outDir</td>
+										<td>
+											コンパイル後のJavaScriptファイルの出力先ディレクトリを指定するプロパティです。
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</details>
+
+						<details>
+							<summary><h3 class="heading-three">エラーコード集</h3></summary>
 							<section class="section">
-								<h4 class="heading-four">tsconfig.json</h4>
-								<p>
-									<strong>tsconfig.json</strong
-									>は、TypeScriptのコンパイル設定を記述する重要なファイルです。以下、記述例です。
-								</p>
-								<code>{"compilerOptions": {"target": "es2015"}}</code>
-								<p>
-									通常、TSのコンパイルは設定しないと互換性維持のためデフォルトでES5にコンパイルされます。しかし、上記の記述例でコンパイル後のJSのバージョンをECMAScript2015（ES6）に設定することができます。
-								</p>
-								<h4 class="heading-four">設定一覧</h4>
 								<table class="table">
+									<caption>
+										TypeScriptのエラーコード一覧表
+									</caption>
 									<thead>
 										<tr>
-											<th class="thead-ts">設定名</th>
+											<th class="thead-ts">エラーコード</th>
 											<th class="thead-ts">説明</th>
 										</tr>
-									</thead>
-									<tbody>
 										<tr>
-											<td>target</td>
-											<td>
-												コンパイル後のJavaScriptのバージョンを指定します。
-											</td>
+											<td>TS6305</td>
+											<td></td>
 										</tr>
-									</tbody>
-								</table>
-								<p>"outDir": "dist",</p>
-								<p>
-									この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
-								</p>
 							</section>
 						</details>
 						<details>
-							<summary>
-								<h3 class="heading-three">TypeScriptの型一覧</h3>
-							</summary>
-							<section class="section">
-								<p>編集中&#x1F4DD;&#x1F611;</p>
-								<!--
-								<h4 class="heading-four">Q.ではTypeScriptで型宣言は必須なのか？</h4>
-								<ul>
-									<li>
-										A.型推論により、必ずしも明示的な型宣言は必要ないです！（const
-										variable = "text"; のように）
-									</li>
-									<li>
-										ただし、関数の引数・戻り値、データベースでは明示的な型宣言が推奨されます。
-									</li>
-								</ul>
-							-->
-							</section>
+							<summary><h3 class="heading-three">Node.jsコマンド</h3></summary>
+							<table class="table">
+								<caption>
+									TypeScriptコマンド一覧表
+								</caption>
+								<thead>
+									<tr>
+										<th class="thead-ts">コマンド</th>
+										<th class="thead-ts">説明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>tsc [ファイル名].ts</td>
+										<td>
+											TypeScriptファイルをJavaScriptにコンパイルするコマンド。
+										</td>
+									</tr>
+									<tr>
+										<td>tsc --version</td>
+										<td>
+											ローカルにインストールされているTypeScriptのコンパイラーのバージョンを表示するコマンド。
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<table>
+								<caption>
+									TypeScript関連のNode.jsコマンド一覧表
+								</caption>
+								<thead>
+									<tr>
+										<th class="thead-ts">コマンド</th>
+										<th class="thead-ts">説明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>tsc [ファイル名].ts</td>
+										<td>
+											type script
+											compilerの略。TypeScriptファイルをJavaScriptにコンパイルするコマンド。
+										</td>
+									</tr>
+									<tr>
+										<td>ts-node [ファイル名].ts</td>
+										<td>
+											TypeScriptファイルを直接実行するコマンド。ts-nodeはNode.jsの実行環境でTypeScriptコードを直接実行できるようにするツールです。
+										</td>
+									</tr>
+									<tr>
+										<td>tsc --version</td>
+										<td>TypeScriptのバージョンを表示するコマンド。</td>
+									</tr>
+								</tbody>
+							</table>
 						</details>
 					</article>
 

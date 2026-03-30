@@ -198,7 +198,7 @@
 		}
 
 		aside .toc {
-			@apply block overflow-hidden translate-x-0;
+			@apply block translate-x-0 h-auto overflow-visible;
 		}
 
 		.toc h2 {
