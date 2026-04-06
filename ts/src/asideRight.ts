@@ -59,12 +59,7 @@ function getHeadings(): HeadingElement[] {
 function generateTableOfContentsHTML(headings: HeadingElement[]): string {
 	if (headings.length === 0) return '';
 
-	let html =
-		'<button class="toc-hamburger" aria-label="目次を開く" aria-expanded="false">';
-	html += '<span class="toc-hamburger__icon"></span>';
-	html += '</button>\n';
-
-	html += '<nav class="toc">\n';
+	let html: string = '<nav class="toc">\n';
 	html += '  <h2 class="text-xl font-bold mb-4">ページ内目次</h2>\n';
 
 	let inDetails = false;
@@ -127,6 +122,15 @@ function insertToc(): void {
 	if (hamburger) {
 		hamburger.addEventListener('click', () => {
 			const isOpen = sidebarRight.classList.toggle('is-open');
+			// aside-left も同時に is-open クラスを付与（メニューの上下スタック表示用）
+			const asideLeft = document.querySelector('.aside-left');
+			if (asideLeft) {
+				if (isOpen) {
+					asideLeft.classList.add('is-open');
+				} else {
+					asideLeft.classList.remove('is-open');
+				}
+			}
 			hamburger.setAttribute('aria-expanded', String(isOpen));
 			hamburger.setAttribute(
 				'aria-label',

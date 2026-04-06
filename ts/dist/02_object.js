@@ -40,7 +40,35 @@ function structuralType() {
     };
     let first = fullName;
     let last = fullName;
+    console.log(first + ' ' + last);
+    // MEMO: +で文字連結すると暗黙的にtoString()が呼び出されるため、
+    // [object Object]という文字列が出力される。
     console.log(first.firstName + ' ' + last.lastName);
+    // MEMO: プロパティの値にアクセスすると文字列が出力できる。
 }
 structuralType();
+/**
+ * オブジェクト型のプロパティチェック
+ * - オブジェクト型で複数のプロパティが割り当てられている場合、全てのプロパテ
+ *   ィが必要になる。足りない場合はエラーになる。
+ */
+function usageCheck() {
+    console.log('# 使われ方のチェック');
+    const hasBoth = {
+        firstName: '佐藤',
+        lastName: '次郎',
+    };
+    console.log(hasBoth); // OK
+    //const hasFirst: fullName = {
+    //	firstName: '鈴木',
+    //};
+    // ERROR: 型 '{ firstName: string; }' を型 'fullName' に割り当てることは
+    // できません。
+    // プロパティ 'lastName' が型 'fullName' に存在しません。ts(2322)
+}
+usageCheck();
 export {};
+/**
+ * オブジェクト型の過剰プロパティチェック
+ * - オブジェクト型で宣言
+ */
