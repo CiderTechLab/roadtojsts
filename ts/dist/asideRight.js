@@ -94,25 +94,22 @@ function insertToc() {
     const headings = getHeadings();
     const tocHTML = generateTableOfContentsHTML(headings);
     sidebarRight.innerHTML = tocHTML;
-    // ハンバーガーボタンのクリックハンドラー
-    const hamburger = sidebarRight.querySelector('.toc-hamburger');
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            const isOpen = sidebarRight.classList.toggle('is-open');
-            // aside-left も同時に is-open クラスを付与（メニューの上下スタック表示用）
-            const asideLeft = document.querySelector('.aside-left');
-            if (asideLeft) {
-                if (isOpen) {
-                    asideLeft.classList.add('is-open');
-                }
-                else {
-                    asideLeft.classList.remove('is-open');
-                }
-            }
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            hamburger.setAttribute('aria-label', isOpen ? '目次を閉じる' : '目次を開く');
-        });
+    // ハンバーガーボタンを動的に作成
+    let hamburger = document.querySelector('.toc-hamburger');
+    if (!hamburger) {
+        hamburger = document.createElement('button');
+        hamburger.className = 'toc-hamburger';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', '目次を開く');
+        hamburger.innerHTML = '<span class="toc-hamburger__icon"></span>';
+        document.body.appendChild(hamburger);
     }
+    // ハンバーガーボタンのクリックハンドラー
+    hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('is-open');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? '目次を閉じる' : '目次を開く');
+    });
     // summary要素のクリックハンドラー
     const summaryElements = sidebarRight.querySelectorAll('summary');
     summaryElements.forEach((summary) => {
@@ -125,18 +122,18 @@ function insertToc() {
         });
     });
     // TOCリンクのクリック後にメニューを閉じる（イベントデリゲーション）
-    sidebarRight.addEventListener('click', (event) => {
+    const handleTocLinkClick = (event) => {
         const target = event.target;
         const link = target === null || target === void 0 ? void 0 : target.closest('.toc-item a');
         if (!link) {
             return;
         }
-        sidebarRight.classList.remove('is-open');
-        if (hamburger) {
-            hamburger.setAttribute('aria-expanded', 'false');
-            hamburger.setAttribute('aria-label', '目次を開く');
-        }
-    });
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', '目次を開く');
+    };
+    sidebarRight.removeEventListener('click', handleTocLinkClick);
+    sidebarRight.addEventListener('click', handleTocLinkClick);
 }
 /**
  * DOM読み込み完了時に目次を生成

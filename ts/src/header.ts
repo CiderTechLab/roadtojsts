@@ -4,7 +4,7 @@
 export {};
 
 function generateHeader(): void {
-	const htmlCode = `
+	const commonHeaderCode = `
 	<h1>
 		<span class="header__title--js">JS</span>&nbsp;&amp;&nbsp;
     <span class="header__title--ts">TS</span>
@@ -14,9 +14,26 @@ function generateHeader(): void {
 		<span class="toc-hamburger__icon"></span>
 	</button>`;
 
+	const commonOverlayCode = `<div class="overlay"></div>`;
+
 	let headerElement = document.querySelector('header');
 	if (headerElement) {
-		headerElement.innerHTML = htmlCode;
+		headerElement.innerHTML = commonHeaderCode;
+		headerElement.insertAdjacentHTML('afterend', commonOverlayCode);
+
+		// ハンバーガーボタンのクリックハンドラー
+		const hamburger =
+			headerElement.querySelector<HTMLButtonElement>('.toc-hamburger');
+		if (hamburger) {
+			hamburger.addEventListener('click', () => {
+				const isOpen = headerElement.classList.toggle('is-open');
+				hamburger.setAttribute('aria-expanded', String(isOpen));
+				hamburger.setAttribute(
+					'aria-label',
+					isOpen ? '目次を閉じる' : '目次を開く'
+				);
+			});
+		}
 	}
 }
 

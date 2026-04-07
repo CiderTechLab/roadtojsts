@@ -11,9 +11,7 @@
 		grid-template-rows: auto auto 1fr auto auto;
 		grid-template-areas:
 			'header'
-			'aside-right'
 			'main'
-			'aside-left'
 			'footer';
 	}
 	.header {
@@ -21,7 +19,7 @@
 		@apply fixed w-full p-4 pl-14 flex items-center gap-8 bg-white border-b border-gray-300;
 		color: var(--text-primary);
 		height: var(--height-header);
-		z-index: 100;
+		z-index: 101;
 	}
 	.header__title--js {
 		@apply bg-yellow-300 text-black px-2;
@@ -61,11 +59,71 @@
 	}
 	.aside-left {
 		grid-area: aside-left;
-		@apply w-screen h-auto;
+		@apply w-screen h-auto pointer-events-none;
+		display: none;
+		overflow-y: auto;
 	}
 	.aside-right {
 		grid-area: aside-right;
-		@apply w-screen h-auto bg-gray-100;
+		@apply w-screen h-auto bg-gray-100 pointer-events-none;
+		display: none;
+		overflow-y: auto;
+	}
+
+	/** overlay表示時のgridレイアウト配置 */
+	.header.is-open + .overlay ~ .aside-right {
+		display: block;
+		position: absolute;
+		pointer-events: auto;
+		top: var(--height-header);
+		left: 0;
+		width: 100vw;
+		height: calc(100vh - var(--height-header));
+		z-index: 101;
+	}
+
+	.header.is-open ~ .overlay ~ .aside-left {
+		display: block;
+		position: absolute;
+		pointer-events: auto;
+		top: calc(var(--height-header) + 400px);
+		left: 0;
+		width: 100vw;
+		height: auto;
+		z-index: 101;
+	}
+
+	.overlay {
+		position: fixed;
+		top: var(--height-header);
+		bottom: var(--height-footer);
+		left: 0;
+		right: 0;
+		background-color: white;
+		z-index: 100;
+		pointer-events: none;
+		display: none;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			'aside-right'
+			'aside-left';
+	}
+
+	/** オーバーレイ（is-open時に表示） */
+	.header.is-open ~ .overlay {
+		display: grid;
+		pointer-events: auto;
+	}
+	/** モバイルメニュー用バックドロップ（is-open時に表示） */
+	.header.is-open ~ .overlay::before {
+		content: '';
+		position: fixed;
+		top: var(--height-header);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
 	}
 
 	/** ハンバーガーボタン - ヘッダーと同じ高さで左上固定 */
@@ -97,51 +155,29 @@
 	}
 
 	/** X印（is-open時） - 上線を下に45度回転 */
-	.aside-right.is-open .toc-hamburger__icon::before {
+	.header.is-open .toc-hamburger__icon::before {
 		transform: translateY(50%) rotate(-45deg);
 	}
 
 	/** X印（is-open時）- 中央線を非表示 */
-	.aside-right.is-open .toc-hamburger__icon {
+	.header.is-open .toc-hamburger__icon {
 		@apply bg-transparent;
 	}
 
 	/** X印（is-open時） - 下線を上に45度回転 */
-	.aside-right.is-open .toc-hamburger__icon::after {
+	.header.is-open .toc-hamburger__icon::after {
 		transform: translateY(50%) rotate(45deg);
 	}
 
 	/** TOCナビ（デフォルトで非表示） */
 	.toc {
 		@apply block bg-gray-100 border-gray-200 overflow-y-auto h-screen translate-x-full transition-transform duration-500;
-		width: 70vw;
+		width: 100vw;
 	}
 
 	/** TOCナビ（is-open時に表示） */
-	.aside-right.is-open .toc {
+	.header.is-open ~ .overlay ~ .aside-right .toc {
 		@apply translate-x-0;
-	}
-
-	/** メニュー開いている時はクリック可能にする */
-	.aside-right.is-open {
-		@apply pointer-events-auto;
-	}
-
-	/** aside-left も is-open時に表示（モバイルメニュー時） */
-	.aside-left.is-open {
-		@apply pointer-events-auto;
-	}
-
-	/** モバイルメニュー用バックドロップ（is-open時に表示） */
-	.aside-right.is-open::before {
-		content: '';
-		position: fixed;
-		top: var(--height-header);
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		background-color: rgba(0, 0, 0, 0.5);
 	}
 
 	/** section */
@@ -208,7 +244,7 @@
 		height: var(--height-footer);
 		left: 0;
 		right: 0;
-		z-index: 100;
+		z-index: 101;
 	}
 
 	.footer span {
@@ -245,17 +281,12 @@
 			width: 100%;
 			max-height: 100vh;
 		}
-
-		/**
-		 * TODO: 予備
-	   * .aside-left {}
-		 */
-
-		/**
-		  * TODO: 予備
-			* .aside-right {}
-			*/
-
+		.aside-left {
+			@apply block;
+		}
+		.aside-right {
+			@apply block;
+		}
 		.aside-right h2 {
 			margin: 0 0 16px 0;
 			font-size: 1rem;
@@ -283,6 +314,11 @@
 
 		/** ハンバーガーボタンはデスクトップで非表示 */
 		.toc-hamburger {
+			display: none;
+		}
+
+		/** オーバーレイはデスクトップで完全非表示 */
+		.overlay {
 			display: none;
 		}
 

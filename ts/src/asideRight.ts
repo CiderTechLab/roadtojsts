@@ -116,28 +116,26 @@ function insertToc(): void {
 
 	sidebarRight.innerHTML = tocHTML;
 
-	// ハンバーガーボタンのクリックハンドラー
-	const hamburger =
-		sidebarRight.querySelector<HTMLButtonElement>('.toc-hamburger');
-	if (hamburger) {
-		hamburger.addEventListener('click', () => {
-			const isOpen = sidebarRight.classList.toggle('is-open');
-			// aside-left も同時に is-open クラスを付与（メニューの上下スタック表示用）
-			const asideLeft = document.querySelector('.aside-left');
-			if (asideLeft) {
-				if (isOpen) {
-					asideLeft.classList.add('is-open');
-				} else {
-					asideLeft.classList.remove('is-open');
-				}
-			}
-			hamburger.setAttribute('aria-expanded', String(isOpen));
-			hamburger.setAttribute(
-				'aria-label',
-				isOpen ? '目次を閉じる' : '目次を開く'
-			);
-		});
+	// ハンバーガーボタンを動的に作成
+	let hamburger = document.querySelector<HTMLButtonElement>('.toc-hamburger');
+	if (!hamburger) {
+		hamburger = document.createElement('button');
+		hamburger.className = 'toc-hamburger';
+		hamburger.setAttribute('aria-expanded', 'false');
+		hamburger.setAttribute('aria-label', '目次を開く');
+		hamburger.innerHTML = '<span class="toc-hamburger__icon"></span>';
+		document.body.appendChild(hamburger);
 	}
+
+	// ハンバーガーボタンのクリックハンドラー
+	hamburger.addEventListener('click', () => {
+		const isOpen = hamburger.classList.toggle('is-open');
+		hamburger.setAttribute('aria-expanded', String(isOpen));
+		hamburger.setAttribute(
+			'aria-label',
+			isOpen ? '目次を閉じる' : '目次を開く'
+		);
+	});
 
 	// summary要素のクリックハンドラー
 	const summaryElements = sidebarRight.querySelectorAll<HTMLElement>('summary');
@@ -152,19 +150,19 @@ function insertToc(): void {
 	});
 
 	// TOCリンクのクリック後にメニューを閉じる（イベントデリゲーション）
-	sidebarRight.addEventListener('click', (event: Event) => {
+	const handleTocLinkClick = (event: Event) => {
 		const target = event.target as HTMLElement | null;
 		const link = target?.closest<HTMLAnchorElement>('.toc-item a');
 		if (!link) {
 			return;
 		}
 
-		sidebarRight.classList.remove('is-open');
-		if (hamburger) {
-			hamburger.setAttribute('aria-expanded', 'false');
-			hamburger.setAttribute('aria-label', '目次を開く');
-		}
-	});
+		hamburger.classList.remove('is-open');
+		hamburger.setAttribute('aria-expanded', 'false');
+		hamburger.setAttribute('aria-label', '目次を開く');
+	};
+	sidebarRight.removeEventListener('click', handleTocLinkClick);
+	sidebarRight.addEventListener('click', handleTocLinkClick);
 }
 
 /**
