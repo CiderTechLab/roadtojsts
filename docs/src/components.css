@@ -37,7 +37,6 @@
 	.main {
 		grid-area: main;
 		@apply pb-20 p-1 flex flex-col gap-0;
-		padding-top: var(--height-header);
 		padding-bottom: var(--height-footer);
 		counter-reset: h2-counter;
 		order: 0;
@@ -56,7 +55,7 @@
 	 */
 
 	.aside {
-		@apply fixed left-0 z-99 pointer-events-none;
+		@apply p-4 fixed left-0 z-99 pointer-events-none;
 	}
 	.aside-left {
 		grid-area: aside-left;
@@ -67,46 +66,27 @@
 	.aside-right {
 		grid-area: aside-right;
 		@apply w-full h-auto bg-gray-100 pointer-events-none;
+		margin-top: var(--height-header);
 		position: static;
 	}
 
-	/** overlay表示時のgridレイアウト配置 */
 	.header.is-open ~ .overlay ~ .aside-left {
-		display: block;
-		position: absolute;
-		pointer-events: auto;
+		@apply block absolute pointer-events-auto left-0 w-screen h-auto z-100 overflow-y-auto p-4;
 		top: var(--height-header);
-		left: 0;
-		width: 100vw;
-		height: auto;
-		z-index: 100;
-		overflow-y: auto;
 		max-height: calc(100vh - var(--height-header));
 	}
 
-	.header.is-open ~ .overlay ~ .aside-right {
-		display: block;
-		pointer-events: auto;
-	}
-
 	.overlay {
-		position: fixed;
+		@apply fixed left-0 right-0 bg-white z-100 pointer-events-none hidden;
 		top: var(--height-header);
 		bottom: var(--height-footer);
-		left: 0;
-		right: 0;
-		background-color: white;
-		z-index: 100;
-		pointer-events: none;
-		display: none;
 		grid-template-columns: 1fr;
 		grid-template-areas: 'aside-left';
 	}
 
 	/** オーバーレイ（is-open時に表示） */
 	.header.is-open ~ .overlay {
-		display: grid;
-		pointer-events: auto;
+		@apply grid pointer-events-auto;
 	}
 	/** モバイルメニュー用バックドロップ（is-open時に表示） */
 	.header.is-open ~ .overlay::before {
@@ -164,8 +144,7 @@
 
 	/** TOCナビ（デフォルトで非表示） */
 	.toc {
-		@apply block bg-gray-100 border-gray-200 overflow-y-auto h-screen translate-x-full transition-transform duration-500;
-		width: 100vw;
+		@apply block bg-gray-100 border-gray-200 overflow-y-auto transition-transform duration-500;
 	}
 
 	/** TOCナビ（is-open時に表示） */
@@ -268,7 +247,7 @@
 		}
 
 		.aside {
-			@apply col-span-1 sticky overflow-y-auto pointer-events-auto p-3 border-r border-gray-200 w-[20vh];
+			@apply col-span-1 sticky overflow-y-auto pointer-events-auto p-4 border-r border-gray-200 w-[20vh];
 			padding-top: calc(var(--height-header) + 5vh);
 			padding-bottom: var(--height-footer);
 			width: 100%;
@@ -278,7 +257,7 @@
 			@apply block;
 		}
 		.aside-right {
-			@apply block;
+			@apply block mt-0;
 		}
 		.aside-right h2 {
 			margin: 0 0 16px 0;

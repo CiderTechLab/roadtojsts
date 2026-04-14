@@ -312,7 +312,6 @@
     gap: calc(var(--spacing) * 0);
     padding: calc(var(--spacing) * 1);
     padding-bottom: calc(var(--spacing) * 20);
-    padding-top: var(--height-header);
     padding-bottom: var(--height-footer);
     counter-reset: h2-counter;
     order: 0;
@@ -327,6 +326,7 @@
     position: fixed;
     left: calc(var(--spacing) * 0);
     z-index: 99;
+    padding: calc(var(--spacing) * 4);
   }
   .aside-left {
     grid-area: aside-left;
@@ -342,40 +342,38 @@
     height: auto;
     width: 100%;
     background-color: var(--color-gray-100);
+    margin-top: var(--height-header);
     position: static;
   }
   .header.is-open ~ .overlay ~ .aside-left {
-    display: block;
-    position: absolute;
     pointer-events: auto;
-    top: var(--height-header);
-    left: 0;
-    width: 100vw;
-    height: auto;
+    position: absolute;
+    left: calc(var(--spacing) * 0);
     z-index: 100;
+    display: block;
+    height: auto;
+    width: 100vw;
     overflow-y: auto;
+    padding: calc(var(--spacing) * 4);
+    top: var(--height-header);
     max-height: calc(100vh - var(--height-header));
   }
-  .header.is-open ~ .overlay ~ .aside-right {
-    display: block;
-    pointer-events: auto;
-  }
   .overlay {
+    pointer-events: none;
     position: fixed;
+    right: calc(var(--spacing) * 0);
+    left: calc(var(--spacing) * 0);
+    z-index: 100;
+    display: none;
+    background-color: var(--color-white);
     top: var(--height-header);
     bottom: var(--height-footer);
-    left: 0;
-    right: 0;
-    background-color: white;
-    z-index: 100;
-    pointer-events: none;
-    display: none;
     grid-template-columns: 1fr;
     grid-template-areas: 'aside-left';
   }
   .header.is-open ~ .overlay {
-    display: grid;
     pointer-events: auto;
+    display: grid;
   }
   .header.is-open ~ .overlay::before {
     content: '';
@@ -450,9 +448,6 @@
   }
   .toc {
     display: block;
-    height: 100vh;
-    --tw-translate-x: 100%;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
     overflow-y: auto;
     border-color: var(--color-gray-200);
     background-color: var(--color-gray-100);
@@ -461,7 +456,6 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: 500ms;
     transition-duration: 500ms;
-    width: 100vw;
   }
   .header.is-open ~ .overlay ~ .aside-right .toc {
     --tw-translate-x: calc(var(--spacing) * 0);
@@ -602,7 +596,7 @@
       border-right-style: var(--tw-border-style);
       border-right-width: 1px;
       border-color: var(--color-gray-200);
-      padding: calc(var(--spacing) * 3);
+      padding: calc(var(--spacing) * 4);
       padding-top: calc(var(--height-header) + 5vh);
       padding-bottom: var(--height-footer);
       width: 100%;
@@ -612,6 +606,7 @@
       display: block;
     }
     .aside-right {
+      margin-top: calc(var(--spacing) * 0);
       display: block;
     }
     .aside-right h2 {
